@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://tv2pf878jom7"]
+
+[ext_resource type="PackedScene" uid="uid://bjb1yk2fjx474" path="res://角色场景/主角/主角.tscn" id="1_1ilaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcpsr"]
+size = Vector2(728, 41)
+
+[node name="Test" type="Node2D"]
+position = Vector2(5, -38)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(374, 159)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(596, 497)
+shape = SubResource("RectangleShape2D_xcpsr")
+
+[node name="主角" parent="." instance=ExtResource("1_1ilaa")]
+position = Vector2(848, 345)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(701, 357)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-573, 307)
+shape = SubResource("RectangleShape2D_xcpsr")

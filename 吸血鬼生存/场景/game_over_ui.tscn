@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://uglp22q2ghgl"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/game_over_ui.gd" id="1_uuu7b"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_uuu7b")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 614.0
+offset_top = 758.0
+offset_right = 1006.0
+offset_bottom = 857.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "重新开始"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1151.0
+offset_top = 758.0
+offset_right = 1543.0
+offset_bottom = 857.0
+theme_override_font_sizes/font_size = 50
+text = "返回初始点"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 550.0
+offset_right = 1345.0
+offset_bottom = 687.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.662745, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc0u7nhpun2q7"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/StartUI.gd" id="1_314sy"]
+[ext_resource type="AudioStream" uid="uid://b223ui0sp6bda" path="res://吸血鬼生存/资源/倒计时.mp3" id="2_r85q8"]
+
+[node name="StartUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_314sy")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 300
+text = "3"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r85q8")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

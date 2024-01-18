@@ -1,0 +1,532 @@
+[gd_scene load_steps=120 format=3 uid="uid://c0kl4flqgh1sv"]
+
+[ext_resource type="Script" path="res://角色场景/远程弓箭手/弓箭手.gd" id="1_57vx5"]
+[ext_resource type="Texture2D" uid="uid://blkn2k8db83al" path="res://游戏资源/远程弓箭手/一段攻击/1_pixian_ai.png" id="2_13du4"]
+[ext_resource type="Texture2D" uid="uid://cntyjaib6qrps" path="res://游戏资源/远程弓箭手/一段攻击/2_pixian_ai.png" id="3_c6jfk"]
+[ext_resource type="Texture2D" uid="uid://ck70blcpl676j" path="res://游戏资源/远程弓箭手/一段攻击/3_pixian_ai.png" id="4_rikqw"]
+[ext_resource type="Texture2D" uid="uid://ddxsjlrsloedg" path="res://游戏资源/远程弓箭手/一段攻击/4_pixian_ai.png" id="5_h5ek3"]
+[ext_resource type="Texture2D" uid="uid://d3mfnqsbujyq8" path="res://游戏资源/远程弓箭手/一段攻击/5_pixian_ai.png" id="6_tuxim"]
+[ext_resource type="Texture2D" uid="uid://dokgnvf6bgx5l" path="res://游戏资源/远程弓箭手/一段攻击/6_pixian_ai.png" id="7_mbgwa"]
+[ext_resource type="Texture2D" uid="uid://gl8isoe7apov" path="res://游戏资源/远程弓箭手/一段攻击/7_pixian_ai.png" id="8_kr741"]
+[ext_resource type="Texture2D" uid="uid://bv47v8xnp5tpg" path="res://游戏资源/远程弓箭手/一段攻击/8_pixian_ai.png" id="9_xme2r"]
+[ext_resource type="Texture2D" uid="uid://dws5jy6ywawdo" path="res://游戏资源/远程弓箭手/一段攻击/9_pixian_ai.png" id="10_gkihb"]
+[ext_resource type="Texture2D" uid="uid://dhybwty2w44r7" path="res://游戏资源/远程弓箭手/一段攻击/10_pixian_ai.png" id="11_tsaul"]
+[ext_resource type="Texture2D" uid="uid://c0ic3fahllfsm" path="res://游戏资源/远程弓箭手/受击/1.png" id="12_kty05"]
+[ext_resource type="Texture2D" uid="uid://bdclsm20kuyff" path="res://游戏资源/远程弓箭手/受击/2.png" id="13_bvj18"]
+[ext_resource type="Texture2D" uid="uid://crnb0y3meo2s8" path="res://游戏资源/远程弓箭手/受击/3.png" id="14_fak3i"]
+[ext_resource type="Texture2D" uid="uid://dsrhdthf4xvc4" path="res://游戏资源/远程弓箭手/受击/4.png" id="15_nm6wy"]
+[ext_resource type="Texture2D" uid="uid://djl4uoqyolr1h" path="res://游戏资源/远程弓箭手/受击/5.png" id="16_kbyq6"]
+[ext_resource type="Texture2D" uid="uid://bupjeremdo85h" path="res://游戏资源/远程弓箭手/受击/6.png" id="17_tysf5"]
+[ext_resource type="Texture2D" uid="uid://b58y0028o7wbi" path="res://游戏资源/远程弓箭手/格挡/1.png" id="18_i016k"]
+[ext_resource type="Texture2D" uid="uid://bg1h7hf7cq6ut" path="res://游戏资源/远程弓箭手/格挡/2.png" id="19_w2n18"]
+[ext_resource type="Texture2D" uid="uid://c5mqr8mqaq1dx" path="res://游戏资源/远程弓箭手/格挡/3.png" id="20_q44fv"]
+[ext_resource type="Texture2D" uid="uid://cyfcuxb0if81h" path="res://游戏资源/远程弓箭手/格挡/4.png" id="21_qm57u"]
+[ext_resource type="Texture2D" uid="uid://dsbvhc3gdc255" path="res://游戏资源/远程弓箭手/格挡/5.png" id="22_re4rj"]
+[ext_resource type="Texture2D" uid="uid://bakiruoshms4g" path="res://游戏资源/远程弓箭手/格挡/6.png" id="23_u4klp"]
+[ext_resource type="Texture2D" uid="uid://tkm75uu0lwwb" path="res://游戏资源/远程弓箭手/格挡/7.png" id="24_hmaej"]
+[ext_resource type="Texture2D" uid="uid://r1pimqkpb33y" path="res://游戏资源/远程弓箭手/格挡/8.png" id="25_5e3qb"]
+[ext_resource type="Texture2D" uid="uid://db886k78e40h4" path="res://游戏资源/远程弓箭手/格挡/9.png" id="26_gyi0a"]
+[ext_resource type="Texture2D" uid="uid://nvain2t47tti" path="res://游戏资源/远程弓箭手/格挡/10.png" id="27_eh7u8"]
+[ext_resource type="Texture2D" uid="uid://ix2gssr177e2" path="res://游戏资源/远程弓箭手/格挡/11.png" id="28_ga646"]
+[ext_resource type="Texture2D" uid="uid://b310av3ahqiu" path="res://游戏资源/远程弓箭手/格挡/12.png" id="29_u0fni"]
+[ext_resource type="Texture2D" uid="uid://dh8j8htgq6dp2" path="res://游戏资源/远程弓箭手/格挡/13.png" id="30_vhmoc"]
+[ext_resource type="Texture2D" uid="uid://bvqtfnr04hloc" path="res://游戏资源/远程弓箭手/格挡/14.png" id="31_t4r2r"]
+[ext_resource type="Texture2D" uid="uid://bbn7bjk7ygctf" path="res://游戏资源/远程弓箭手/格挡/15.png" id="32_encqb"]
+[ext_resource type="Texture2D" uid="uid://2324ptwryuau" path="res://游戏资源/远程弓箭手/格挡/16.png" id="33_ok54c"]
+[ext_resource type="Texture2D" uid="uid://uhrww6c6nq8b" path="res://游戏资源/远程弓箭手/格挡/17.png" id="34_fxdfd"]
+[ext_resource type="Texture2D" uid="uid://c0gie00pfybsi" path="res://游戏资源/远程弓箭手/格挡/18.png" id="35_m1nxo"]
+[ext_resource type="Texture2D" uid="uid://bxahn02ork0yp" path="res://游戏资源/远程弓箭手/格挡/19.png" id="36_i6qih"]
+[ext_resource type="Texture2D" uid="uid://c50xi1d6fvdn6" path="res://游戏资源/远程弓箭手/死亡/1.png" id="37_2dvoi"]
+[ext_resource type="Texture2D" uid="uid://bc5l1b4m3i6dt" path="res://游戏资源/远程弓箭手/死亡/2.png" id="38_34fxy"]
+[ext_resource type="Texture2D" uid="uid://c4voc1aigcmxc" path="res://游戏资源/远程弓箭手/死亡/3.png" id="39_o817m"]
+[ext_resource type="Texture2D" uid="uid://c8hqkf5ss3n0l" path="res://游戏资源/远程弓箭手/死亡/4.png" id="40_agj3f"]
+[ext_resource type="Texture2D" uid="uid://c8cuhrn1wrklg" path="res://游戏资源/远程弓箭手/死亡/5.png" id="41_vc8mg"]
+[ext_resource type="Texture2D" uid="uid://xua1800di451" path="res://游戏资源/远程弓箭手/死亡/6.png" id="42_4mqkm"]
+[ext_resource type="Texture2D" uid="uid://b53ij7hsikyj" path="res://游戏资源/远程弓箭手/死亡/7.png" id="43_a18k7"]
+[ext_resource type="Texture2D" uid="uid://cnodcr8kmld5u" path="res://游戏资源/远程弓箭手/死亡/8.png" id="44_va3w1"]
+[ext_resource type="Texture2D" uid="uid://ncro27rrigcf" path="res://游戏资源/远程弓箭手/死亡/9.png" id="45_hwfu6"]
+[ext_resource type="Texture2D" uid="uid://brlcnu32ujfmd" path="res://游戏资源/远程弓箭手/死亡/10.png" id="46_nhy2x"]
+[ext_resource type="Texture2D" uid="uid://bsgrqticr207t" path="res://游戏资源/远程弓箭手/死亡/11.png" id="47_8boxk"]
+[ext_resource type="Texture2D" uid="uid://ftv3nt75av2j" path="res://游戏资源/远程弓箭手/死亡/12.png" id="48_utmmw"]
+[ext_resource type="Texture2D" uid="uid://bl2iuwbv3h6u7" path="res://游戏资源/远程弓箭手/死亡/13.png" id="49_4eb5r"]
+[ext_resource type="Texture2D" uid="uid://dwxddgt1m1ww3" path="res://游戏资源/远程弓箭手/死亡/14.png" id="50_bytas"]
+[ext_resource type="Texture2D" uid="uid://ry8tj26ajtrl" path="res://游戏资源/远程弓箭手/死亡/15.png" id="51_h7a3a"]
+[ext_resource type="Texture2D" uid="uid://ceku4m56wuxhf" path="res://游戏资源/远程弓箭手/死亡/16.png" id="52_0gh7k"]
+[ext_resource type="Texture2D" uid="uid://brm1l0cs2aasw" path="res://游戏资源/远程弓箭手/死亡/17.png" id="53_ve68l"]
+[ext_resource type="Texture2D" uid="uid://oykagrof0lej" path="res://游戏资源/远程弓箭手/死亡/18.png" id="54_umud3"]
+[ext_resource type="Texture2D" uid="uid://dh6l43n1b24o8" path="res://游戏资源/远程弓箭手/滑行/1_pixian_ai.png" id="55_1a60c"]
+[ext_resource type="Texture2D" uid="uid://ydntfrps5dmr" path="res://游戏资源/远程弓箭手/滑行/2_pixian_ai.png" id="56_affps"]
+[ext_resource type="Texture2D" uid="uid://bfka7olx4nbsp" path="res://游戏资源/远程弓箭手/滑行/3_pixian_ai.png" id="57_4ako8"]
+[ext_resource type="Texture2D" uid="uid://qtuc1y8b0gu0" path="res://游戏资源/远程弓箭手/滑行/4_pixian_ai.png" id="58_o40wl"]
+[ext_resource type="Texture2D" uid="uid://c8m5u2xk7jfm3" path="res://游戏资源/远程弓箭手/滑行/5_pixian_ai.png" id="59_g5faa"]
+[ext_resource type="Texture2D" uid="uid://dpv6kofp0geeo" path="res://游戏资源/远程弓箭手/滑行/6_pixian_ai.png" id="60_b5x83"]
+[ext_resource type="Texture2D" uid="uid://dwkabwj6ty04x" path="res://游戏资源/远程弓箭手/滑行/7_pixian_ai.png" id="61_oslqq"]
+[ext_resource type="Texture2D" uid="uid://ckmxcl1reirh2" path="res://游戏资源/远程弓箭手/滑行/8_pixian_ai.png" id="62_whqxt"]
+[ext_resource type="Texture2D" uid="uid://bwhlpekkeeaxx" path="res://游戏资源/远程弓箭手/滑行/9_pixian_ai.png" id="63_kebhv"]
+[ext_resource type="Texture2D" uid="uid://bpwnhksyaxwoe" path="res://游戏资源/远程弓箭手/滑行/10_pixian_ai.png" id="64_ohwkb"]
+[ext_resource type="Texture2D" uid="uid://dfye6efqnkeu7" path="res://游戏资源/远程弓箭手/滑行/11_pixian_ai.png" id="65_5rthc"]
+[ext_resource type="Texture2D" uid="uid://dtlkbke6uyoof" path="res://游戏资源/远程弓箭手/滑行/12_pixian_ai.png" id="66_dkir4"]
+[ext_resource type="Texture2D" uid="uid://c5yxlrnfrld2b" path="res://游戏资源/远程弓箭手/滑行/13_pixian_ai.png" id="67_j3yq2"]
+[ext_resource type="Texture2D" uid="uid://dmtm3y3mx485b" path="res://游戏资源/远程弓箭手/翻滚/1_pixian_ai.png" id="68_n8irx"]
+[ext_resource type="Texture2D" uid="uid://cnif706vxfmtm" path="res://游戏资源/远程弓箭手/翻滚/2_pixian_ai.png" id="69_g37qb"]
+[ext_resource type="Texture2D" uid="uid://ef60xwaqd5hf" path="res://游戏资源/远程弓箭手/翻滚/3_pixian_ai.png" id="70_17mrv"]
+[ext_resource type="Texture2D" uid="uid://b2s1lfcw4w5pf" path="res://游戏资源/远程弓箭手/翻滚/4_pixian_ai.png" id="71_esvfy"]
+[ext_resource type="Texture2D" uid="uid://bwflmop7h2q2i" path="res://游戏资源/远程弓箭手/翻滚/5_pixian_ai.png" id="72_j3eho"]
+[ext_resource type="Texture2D" uid="uid://iw5ebk7g76tp" path="res://游戏资源/远程弓箭手/翻滚/6_pixian_ai.png" id="73_ldak2"]
+[ext_resource type="Texture2D" uid="uid://b5pnmu73r0mm6" path="res://游戏资源/远程弓箭手/翻滚/7_pixian_ai.png" id="74_shs2n"]
+[ext_resource type="Texture2D" uid="uid://b3adoejhubxpl" path="res://游戏资源/远程弓箭手/翻滚/8_pixian_ai.png" id="75_1om0v"]
+[ext_resource type="Texture2D" uid="uid://c683gdnq0ijty" path="res://游戏资源/远程弓箭手/跑/1_pixian_ai.png" id="76_2jb1j"]
+[ext_resource type="Texture2D" uid="uid://bajpgtsnu4yka" path="res://游戏资源/远程弓箭手/跑/2_pixian_ai.png" id="77_icis2"]
+[ext_resource type="Texture2D" uid="uid://cy5fsl1pum6s1" path="res://游戏资源/远程弓箭手/跑/3_pixian_ai.png" id="78_oqgw8"]
+[ext_resource type="Texture2D" uid="uid://dax5kebtod7ly" path="res://游戏资源/远程弓箭手/跑/4_pixian_ai.png" id="79_cpkf8"]
+[ext_resource type="Texture2D" uid="uid://desuuh47jex4s" path="res://游戏资源/远程弓箭手/跑/5_pixian_ai.png" id="80_d8dgl"]
+[ext_resource type="Texture2D" uid="uid://daqpgqd8wurhp" path="res://游戏资源/远程弓箭手/跑/6_pixian_ai.png" id="81_tfkah"]
+[ext_resource type="Texture2D" uid="uid://chfjmaqx2cf04" path="res://游戏资源/远程弓箭手/跑/7_pixian_ai.png" id="82_0l2hj"]
+[ext_resource type="Texture2D" uid="uid://ddo8nacvv3v2n" path="res://游戏资源/远程弓箭手/跑/8_pixian_ai.png" id="83_im03f"]
+[ext_resource type="Texture2D" uid="uid://ngqbbneetr3p" path="res://游戏资源/远程弓箭手/跑/9_pixian_ai.png" id="84_boxcf"]
+[ext_resource type="Texture2D" uid="uid://bdstg7cycs7gx" path="res://游戏资源/远程弓箭手/跑/10_pixian_ai.png" id="85_io0mb"]
+[ext_resource type="Texture2D" uid="uid://bp1jinu2v8248" path="res://游戏资源/远程弓箭手/跳跃/1.png" id="86_08es5"]
+[ext_resource type="Texture2D" uid="uid://bxr4pntvb3oc4" path="res://游戏资源/远程弓箭手/跳跃/2.png" id="87_ciq55"]
+[ext_resource type="Texture2D" uid="uid://bgm4wyipnt7pw" path="res://游戏资源/远程弓箭手/跳跃/3.png" id="88_14gfm"]
+[ext_resource type="Texture2D" uid="uid://b1f18trka1580" path="res://游戏资源/远程弓箭手/跳跃/4.png" id="89_gi0vd"]
+[ext_resource type="Texture2D" uid="uid://qtki6vx1qwas" path="res://游戏资源/远程弓箭手/跳跃/5.png" id="90_8376k"]
+[ext_resource type="Texture2D" uid="uid://odcbfxrydfmx" path="res://游戏资源/远程弓箭手/跳跃/6.png" id="91_71k73"]
+[ext_resource type="Texture2D" uid="uid://f4bvl4o4nkxc" path="res://游戏资源/远程弓箭手/跳跃/7.png" id="92_1cb7k"]
+[ext_resource type="Texture2D" uid="uid://ie0dkdm326l5" path="res://游戏资源/远程弓箭手/跳跃/9.png" id="93_ghc71"]
+[ext_resource type="Texture2D" uid="uid://b8wwx2ab5nnvw" path="res://游戏资源/远程弓箭手/跳跃/10.png" id="94_c465l"]
+[ext_resource type="Texture2D" uid="uid://0na16cu7gsjm" path="res://游戏资源/远程弓箭手/跳跃/11.png" id="95_chuck"]
+[ext_resource type="Texture2D" uid="uid://cloxs351yn1mb" path="res://游戏资源/远程弓箭手/跳跃/12.png" id="96_48jkg"]
+[ext_resource type="Texture2D" uid="uid://b4e4be7kd2cy1" path="res://游戏资源/远程弓箭手/跳跃/13.png" id="97_wgwrl"]
+[ext_resource type="Texture2D" uid="uid://nxl1eogrjppo" path="res://游戏资源/远程弓箭手/跳跃/14.png" id="98_hyieb"]
+[ext_resource type="Texture2D" uid="uid://hexgkhr6gsdm" path="res://游戏资源/远程弓箭手/跳跃/15.png" id="99_pluq7"]
+[ext_resource type="Texture2D" uid="uid://bel0iicf15i7l" path="res://游戏资源/远程弓箭手/跳跃/16.png" id="100_ckj6p"]
+[ext_resource type="Texture2D" uid="uid://bybco2h7xpaju" path="res://游戏资源/远程弓箭手/跳跃/17.png" id="101_ukl32"]
+[ext_resource type="Texture2D" uid="uid://786h16iqsiiy" path="res://游戏资源/远程弓箭手/跳跃/18.png" id="102_1vpce"]
+[ext_resource type="Texture2D" uid="uid://c25fsu8vaxf4v" path="res://游戏资源/远程弓箭手/跳跃/19.png" id="103_6dwwg"]
+[ext_resource type="Texture2D" uid="uid://cqpqes588mtsh" path="res://游戏资源/远程弓箭手/跳跃/20.png" id="104_icq2q"]
+[ext_resource type="Texture2D" uid="uid://bayvn0vyd4wiu" path="res://游戏资源/远程弓箭手/跳跃/21.png" id="105_v11t7"]
+[ext_resource type="Texture2D" uid="uid://carcjnndh250c" path="res://游戏资源/远程弓箭手/跳跃/22.png" id="106_efm2p"]
+[ext_resource type="Texture2D" uid="uid://dqbhx8i8p5w5j" path="res://游戏资源/远程弓箭手/静止/1.png" id="107_ramtg"]
+[ext_resource type="Texture2D" uid="uid://chinooa4xa86a" path="res://游戏资源/远程弓箭手/静止/2.png" id="108_6frfi"]
+[ext_resource type="Texture2D" uid="uid://dswfkktqnhc1" path="res://游戏资源/远程弓箭手/静止/3.png" id="109_5y4e4"]
+[ext_resource type="Texture2D" uid="uid://ct87idiw0uqwf" path="res://游戏资源/远程弓箭手/静止/4.png" id="110_cc53k"]
+[ext_resource type="Texture2D" uid="uid://dgcbguskmxe5e" path="res://游戏资源/远程弓箭手/静止/5.png" id="111_wndtl"]
+[ext_resource type="Texture2D" uid="uid://uo3b3fryuik5" path="res://游戏资源/远程弓箭手/静止/6.png" id="112_2kp8y"]
+[ext_resource type="Texture2D" uid="uid://b1dch0hvwyp1w" path="res://游戏资源/远程弓箭手/静止/7.png" id="113_e5kia"]
+[ext_resource type="Texture2D" uid="uid://ccllywpo2moko" path="res://游戏资源/远程弓箭手/静止/8.png" id="114_lab8m"]
+[ext_resource type="Texture2D" uid="uid://bnkioh8itapb3" path="res://游戏资源/远程弓箭手/静止/9.png" id="115_663t4"]
+[ext_resource type="Texture2D" uid="uid://dv55r2j1qtr0l" path="res://游戏资源/远程弓箭手/静止/10.png" id="116_vxf2t"]
+[ext_resource type="Texture2D" uid="uid://dvw8sov4mgafa" path="res://游戏资源/远程弓箭手/静止/11.png" id="117_qmehb"]
+[ext_resource type="Texture2D" uid="uid://dqnxalqwy36r5" path="res://游戏资源/远程弓箭手/静止/12.png" id="118_eg2br"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss34r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_13du4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c6jfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rikqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h5ek3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tuxim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mbgwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kr741")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xme2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gkihb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tsaul")
+}],
+"loop": false,
+"name": &"一段攻击",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_kty05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bvj18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fak3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nm6wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kbyq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tysf5")
+}],
+"loop": false,
+"name": &"受击",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_i016k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w2n18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q44fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qm57u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_re4rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_u4klp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hmaej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5e3qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gyi0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_eh7u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ga646")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_u0fni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vhmoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_t4r2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_encqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ok54c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_fxdfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_m1nxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_i6qih")
+}],
+"loop": false,
+"name": &"格挡",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_2dvoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_34fxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_o817m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_agj3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_vc8mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_4mqkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_a18k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_va3w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hwfu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nhy2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8boxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_utmmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4eb5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_bytas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_h7a3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_0gh7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ve68l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_umud3")
+}],
+"loop": false,
+"name": &"死亡",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_1a60c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_affps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_4ako8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_o40wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_g5faa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_b5x83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_oslqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_whqxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_kebhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_ohwkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_5rthc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_dkir4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_j3yq2")
+}],
+"loop": false,
+"name": &"滑行",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_n8irx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_g37qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_17mrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_esvfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_j3eho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ldak2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_shs2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_1om0v")
+}],
+"loop": false,
+"name": &"翻滚",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_2jb1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_icis2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_oqgw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_cpkf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_d8dgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_tfkah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_0l2hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_im03f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_boxcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_io0mb")
+}],
+"loop": true,
+"name": &"跑",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_08es5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_ciq55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_14gfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_gi0vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_8376k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_71k73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_1cb7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_ghc71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_c465l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_chuck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_48jkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_wgwrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_hyieb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_pluq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_ckj6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_ukl32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_1vpce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_6dwwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_icq2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_v11t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_efm2p")
+}],
+"loop": false,
+"name": &"跳跃",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107_ramtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_6frfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_5y4e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_cc53k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_wndtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_2kp8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_e5kia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_lab8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_663t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_vxf2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_qmehb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_eg2br")
+}],
+"loop": true,
+"name": &"静止",
+"speed": 6.0
+}]
+
+[node name="弓箭手" type="CharacterBody2D"]
+script = ExtResource("1_57vx5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(539, 288)
+sprite_frames = SubResource("SpriteFrames_ss34r")
+animation = &"跑"
+autoplay = "跑"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(553, 350)
+polygon = PackedVector2Array(-4, -1, -35, 17, -70, 96, -56, 126, 6, 127, 23, 99, 11, 2)

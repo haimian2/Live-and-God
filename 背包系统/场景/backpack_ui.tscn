@@ -1,0 +1,401 @@
+[gd_scene load_steps=24 format=3 uid="uid://d1tnu3xnl76jb"]
+
+[ext_resource type="Script" path="res://背包系统/脚本/BackpackRoot.gd" id="1_b2boo"]
+[ext_resource type="Script" path="res://背包系统/脚本/BackPackInterface.gd" id="2_5xbk5"]
+[ext_resource type="Texture2D" uid="uid://dghfpaajbps5h" path="res://背包系统/素材/border_pixian_ai.png" id="3_kbl4k"]
+[ext_resource type="Script" path="res://背包系统/脚本/Attribute.gd" id="4_3g11y"]
+[ext_resource type="Texture2D" uid="uid://8pfoiculmxfk" path="res://游戏资源/主角/其他/普通头像.png" id="5_64mh2"]
+[ext_resource type="Texture2D" uid="uid://cai3jgsh17fkq" path="res://背包系统/素材/icon1.png" id="6_avgyu"]
+[ext_resource type="Script" path="res://背包系统/脚本/EquipInventory.gd" id="7_i5r7a"]
+[ext_resource type="Script" path="res://背包系统/脚本/PlayerInventory.gd" id="8_st5rf"]
+[ext_resource type="PackedScene" uid="uid://dva6h1v8gjc88" path="res://背包系统/场景/slot.tscn" id="9_70cyb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8ri5"]
+texture = ExtResource("3_kbl4k")
+texture_margin_left = 87.0
+texture_margin_top = 70.0
+texture_margin_right = 87.0
+texture_margin_bottom = 70.0
+expand_margin_left = 30.0
+expand_margin_top = 25.0
+expand_margin_right = 30.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="Theme" id="Theme_1yak5"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_n8ri5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li7j1"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(92, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb0dw"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd12e"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwoc1"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yqyq"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwbxa"]
+atlas = ExtResource("6_avgyu")
+region = Rect2(436, 230, 24, 28)
+
+[sub_resource type="Theme" id="Theme_x4r6w"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_n8ri5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ncrcq"]
+
+[sub_resource type="Theme" id="Theme_2r71i"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_ncrcq")
+
+[sub_resource type="Theme" id="Theme_85ym8"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_n8ri5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53q5x"]
+
+[sub_resource type="Theme" id="Theme_w21i1"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_53q5x")
+
+[node name="BackpackUI" type="CanvasLayer"]
+script = ExtResource("1_b2boo")
+
+[node name="Backpack" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1500.0
+offset_bottom = 600.0
+script = ExtResource("2_5xbk5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Backpack"]
+layout_mode = 2
+offset_right = 1500.0
+offset_bottom = 650.0
+
+[node name="Attribute" type="PanelContainer" parent="Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1yak5")
+script = ExtResource("4_3g11y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_64mh2")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "生命值"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_li7j1")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "法力值"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_sb0dw")
+
+[node name="MarginContainer4" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "攻击力"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_wd12e")
+
+[node name="MarginContainer5" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "防御力
+"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_xwoc1")
+
+[node name="MarginContainer6" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "体力值"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2yqyq")
+
+[node name="MarginContainer7" type="MarginContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "剩余点"
+
+[node name="Label2" type="Label" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "00"
+
+[node name="TextureButton" type="TextureButton" parent="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_qwbxa")
+
+[node name="EquipInventory" type="PanelContainer" parent="Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_x4r6w")
+script = ExtResource("7_i5r7a")
+
+[node name="MarginContainer" type="MarginContainer" parent="Backpack/HBoxContainer/EquipInventory"]
+layout_mode = 2
+theme = SubResource("Theme_2r71i")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="Backpack/HBoxContainer/EquipInventory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="PlayerInventory" type="PanelContainer" parent="Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_85ym8")
+script = ExtResource("8_st5rf")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Backpack/HBoxContainer/PlayerInventory"]
+layout_mode = 2
+theme = SubResource("Theme_w21i1")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Backpack/HBoxContainer/PlayerInventory/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer2" type="GridContainer" parent="Backpack/HBoxContainer/PlayerInventory/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 6
+
+[node name="GrabbedSlot" parent="Backpack" instance=ExtResource("9_70cyb")]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Node2D" parent="Backpack"]
+position = Vector2(-48, -270)
+
+[node name="Label" type="Label" parent="Backpack/Label"]
+offset_left = 613.0
+offset_top = 484.0
+offset_right = 653.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "头部"
+
+[node name="Label2" type="Label" parent="Backpack/Label"]
+offset_left = 730.0
+offset_top = 480.0
+offset_right = 770.0
+offset_bottom = 503.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "攻击"
+
+[node name="Label3" type="Label" parent="Backpack/Label"]
+offset_left = 613.0
+offset_top = 596.0
+offset_right = 653.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "胸部"
+
+[node name="Label4" type="Label" parent="Backpack/Label"]
+offset_left = 730.0
+offset_top = 596.0
+offset_right = 770.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "防御"
+
+[node name="Label5" type="Label" parent="Backpack/Label"]
+offset_left = 613.0
+offset_top = 704.0
+offset_right = 653.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "腿部"
+
+[node name="Label6" type="Label" parent="Backpack/Label"]
+offset_left = 730.0
+offset_top = 704.0
+offset_right = 770.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "戒指"
+
+[node name="Label7" type="Label" parent="Backpack/Label"]
+offset_left = 613.0
+offset_top = 820.0
+offset_right = 653.0
+offset_bottom = 843.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "鞋子"
+
+[node name="Label8" type="Label" parent="Backpack/Label"]
+offset_left = 730.0
+offset_top = 820.0
+offset_right = 770.0
+offset_bottom = 843.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "戒指"
+
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_hp"]
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_magic"]
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_damage"]
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_defense"]
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_energy"]
+[connection signal="pressed" from="Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer/TextureButton" to="Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_reset"]

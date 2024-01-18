@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://n3ndtoxc30wl"]
+
+[ext_resource type="Script" path="res://背包系统/脚本/inventory_data.gd" id="1_43khb"]
+[ext_resource type="Resource" uid="uid://vosxiqgyygth" path="res://背包系统/资源/apple.tres" id="2_tc8lj"]
+[ext_resource type="Script" path="res://背包系统/脚本/slot_data.gd" id="3_pkrxf"]
+[ext_resource type="Resource" uid="uid://ujduaxst6ruy" path="res://背包系统/资源/blue_book.tres" id="4_ci7o7"]
+
+[sub_resource type="Resource" id="Resource_flrmb"]
+script = ExtResource("3_pkrxf")
+item_data = ExtResource("2_tc8lj")
+quantity = 90
+
+[sub_resource type="Resource" id="Resource_ko65h"]
+script = ExtResource("3_pkrxf")
+item_data = ExtResource("2_tc8lj")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_nbgfj"]
+script = ExtResource("3_pkrxf")
+item_data = ExtResource("4_ci7o7")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_tgien"]
+script = ExtResource("3_pkrxf")
+item_data = ExtResource("2_tc8lj")
+quantity = 22
+
+[resource]
+script = ExtResource("1_43khb")
+slot_datas = Array[ExtResource("3_pkrxf")]([SubResource("Resource_flrmb"), SubResource("Resource_ko65h"), SubResource("Resource_nbgfj"), SubResource("Resource_tgien"), null, null, null, null])

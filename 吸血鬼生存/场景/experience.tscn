@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://celpddl3rhlpj"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/Experience.gd" id="1_uf7pc"]
+[ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="2_qtald"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcklx"]
+atlas = ExtResource("2_qtald")
+region = Rect2(132, 162, 8, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6bot"]
+radius = 31.0
+
+[node name="Experience" type="Node2D"]
+script = ExtResource("1_uf7pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gcklx")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["drop_experience"]]
+collision_layer = 8
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_k6bot")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

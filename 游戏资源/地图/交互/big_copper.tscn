@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://d0gtawedgwh6c"]
+
+[ext_resource type="Script" path="res://游戏资源/地图/交互/BigCopper.gd" id="1_m7adf"]
+[ext_resource type="Texture2D" uid="uid://cjjvlqpkbo0ue" path="res://游戏资源/地图/交互/资源/可交互图块1_pixian_ai.png" id="1_p1xsc"]
+[ext_resource type="AudioStream" uid="uid://b758blxg003hd" path="res://游戏资源/地图/交互/资源/吃金币.mp3" id="3_nms5i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryhiu"]
+size = Vector2(28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4odjf"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(130, 132, 28, 28)
+
+[sub_resource type="Animation" id="Animation_kur7d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_4odjf")]
+}
+
+[sub_resource type="Animation" id="Animation_w8wj4"]
+resource_name = "吃"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5jdl"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(162, 132, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83e3j"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(193, 132, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs58f"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(226, 132, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u17xb"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(257, 132, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hejc2"]
+atlas = ExtResource("1_p1xsc")
+region = Rect2(289, 132, 28, 28)
+
+[sub_resource type="Animation" id="Animation_afro0"]
+resource_name = "大铜币"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_4odjf"), SubResource("AtlasTexture_i5jdl"), SubResource("AtlasTexture_83e3j"), SubResource("AtlasTexture_cs58f"), SubResource("AtlasTexture_u17xb"), SubResource("AtlasTexture_hejc2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j5bi0"]
+_data = {
+"RESET": SubResource("Animation_kur7d"),
+"吃": SubResource("Animation_w8wj4"),
+"大铜币": SubResource("Animation_afro0")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_76at4"]
+radius = 19.105
+
+[node name="BigCopper" type="CharacterBody2D"]
+position = Vector2(14, 14)
+collision_layer = 0
+script = ExtResource("1_m7adf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ryhiu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j5bi0")
+}
+autoplay = "大铜币"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_4odjf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nms5i")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_76at4")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcf7x35p08f6t"]
+
+[ext_resource type="Script" path="res://游戏控制/脚本/ControlGame.gd" id="1_66r0w"]
+
+[node name="ControlGame" type="Node"]
+process_mode = 3
+script = ExtResource("1_66r0w")
+
+[node name="MenuUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MenuUI/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 40
+
+[node name="ContinueButton" type="Button" parent="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "继续"
+
+[node name="MainmenuButton" type="Button" parent="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "主菜单"
+
+[node name="BreakButton" type="Button" parent="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "退出"
+
+[connection signal="pressed" from="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer/MainmenuButton" to="." method="_on_mainmenu_button_pressed"]
+[connection signal="pressed" from="MenuUI/PanelContainer/VBoxContainer/MarginContainer/GridContainer/BreakButton" to="." method="_on_break_button_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl4d5uel6y12s"]
+
+[ext_resource type="Texture2D" uid="uid://dhq2kyhexbvgg" path="res://背包系统/素材/#1 - Transparent Icons.png" id="1_6rwb6"]
+[ext_resource type="Script" path="res://背包系统/脚本/woodensword.gd" id="1_rvfiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs646"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx6mr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8163q"]
+atlas = ExtResource("1_6rwb6")
+region = Rect2(5, 165, 22, 22)
+
+[node name="woodensword" type="CharacterBody2D"]
+scale = Vector2(1.505, 1.505)
+collision_layer = 0
+script = ExtResource("1_rvfiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qs646")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qx6mr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_8163q")

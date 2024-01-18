@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj134fkmuqal7"]
+
+[ext_resource type="Script" path="res://背包系统/脚本/main.gd" id="1_7jlrb"]
+[ext_resource type="Script" path="res://背包系统/脚本/Invenroty_Interface.gd" id="2_dqj65"]
+[ext_resource type="PackedScene" uid="uid://cxvciuabvs7gr" path="res://背包系统/场景/inventory.tscn" id="3_rynff"]
+[ext_resource type="PackedScene" uid="uid://dva6h1v8gjc88" path="res://背包系统/场景/slot.tscn" id="4_i70gd"]
+[ext_resource type="Texture2D" uid="uid://v4satr5wfol5" path="res://背包系统/素材/背景板.png" id="5_163ut"]
+[ext_resource type="PackedScene" uid="uid://bjb1yk2fjx474" path="res://角色场景/主角/主角.tscn" id="6_bwppx"]
+[ext_resource type="Resource" uid="uid://n3ndtoxc30wl" path="res://测试/test_inv.tres" id="7_84hh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrd5m"]
+size = Vector2(1103, 20)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_7jlrb")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InvenrotyInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 87.0
+offset_top = 99.0
+offset_right = 87.0
+offset_bottom = 99.0
+script = ExtResource("2_dqj65")
+
+[node name="PlayerInventory" parent="UI/InvenrotyInterface" instance=ExtResource("3_rynff")]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 144.0
+
+[node name="GrabbedSlot" parent="UI/InvenrotyInterface" instance=ExtResource("4_i70gd")]
+visible = false
+modulate = Color(1, 1, 1, 0.407843)
+layout_mode = 2
+offset_left = -57.0
+offset_top = 102.0
+offset_right = 7.0
+offset_bottom = 166.0
+
+[node name="Name" type="Node2D" parent="UI/InvenrotyInterface"]
+position = Vector2(280, 0)
+
+[node name="Background" type="Sprite2D" parent="UI/InvenrotyInterface/Name"]
+texture = ExtResource("5_163ut")
+
+[node name="Name" type="Label" parent="UI/InvenrotyInterface/Name"]
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 30.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 30
+text = "背包"
+
+[node name="主角" parent="." instance=ExtResource("6_bwppx")]
+inventory_data_equipped = ExtResource("7_84hh3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(553.5, 523)
+shape = SubResource("RectangleShape2D_yrd5m")

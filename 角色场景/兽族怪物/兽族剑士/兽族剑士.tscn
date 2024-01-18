@@ -1,0 +1,755 @@
+[gd_scene load_steps=74 format=3 uid="uid://lfccwlm0p2fx"]
+
+[ext_resource type="Texture2D" uid="uid://0kltc0ff5aak" path="res://游戏资源/兽族怪物/兽族剑士/a_large_slash.png" id="1_8bb4j"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/兽族剑士.gd" id="1_cu1f0"]
+[ext_resource type="Texture2D" uid="uid://bi4nrtxidcq66" path="res://游戏资源/兽族怪物/兽族剑士/a_large_islash.png" id="2_nchjs"]
+[ext_resource type="Texture2D" uid="uid://cjasxesr33yqg" path="res://游戏资源/兽族怪物/兽族剑士/a_walk.png" id="3_gyt4o"]
+[ext_resource type="Texture2D" uid="uid://1ievhilf6vvs" path="res://游戏资源/兽族怪物/兽族剑士/a_idle.png" id="4_0wrak"]
+[ext_resource type="Texture2D" uid="uid://ckuwahfxti5ff" path="res://游戏资源/兽族怪物/兽族剑士/a_hurt.png" id="5_c0hdp"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/状态管理器.gd" id="7_to5am"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/向左走状态.gd" id="8_5rdy5"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/向右走状态.gd" id="8_dn7si"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/右上攻击.gd" id="9_rdj6e"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/右下攻击.gd" id="10_fqa85"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/左上攻击.gd" id="11_nomvb"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/左下攻击.gd" id="12_upqts"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/受击状态.gd" id="13_qummv"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/死亡状态.gd" id="14_d6bt3"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/状态机/左静止状态.gd" id="16_n8jsu"]
+[ext_resource type="AudioStream" uid="uid://ck7augy8sh7w5" path="res://游戏资源/兽族怪物/通用/受击.mp3" id="16_og3pr"]
+[ext_resource type="AudioStream" uid="uid://bs43aypqjyqoh" path="res://游戏资源/兽族怪物/通用/巨魔死亡.mp3" id="17_880pn"]
+[ext_resource type="Script" path="res://角色场景/兽族怪物/兽族剑士/右静止状态.gd" id="17_ws3f7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2l05"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i87u"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o51f7"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr5fw"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eyw1"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ktht"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmjnw"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7km0"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd5mr"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rapsw"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ml0"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eskqj"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3iq6"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bi8o"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n4ub"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg40v"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4si05"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulafc"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(448, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm2uc"]
+atlas = ExtResource("4_0wrak")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6yyr"]
+atlas = ExtResource("4_0wrak")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y7fi"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aen8w"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfn7t"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg536"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6v4f"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_265v7"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq3cl"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cq6i"]
+atlas = ExtResource("3_gyt4o")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn12r"]
+atlas = ExtResource("4_0wrak")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ufdt"]
+atlas = ExtResource("4_0wrak")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuc1l"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwko8"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddrs5"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqxk1"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e2fw"]
+atlas = ExtResource("1_8bb4j")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d58uo"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2pg7"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcuw4"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgdcp"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak7fw"]
+atlas = ExtResource("2_nchjs")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0j5u"]
+atlas = ExtResource("5_c0hdp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmq31"]
+atlas = ExtResource("5_c0hdp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on3rx"]
+atlas = ExtResource("5_c0hdp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdi3l"]
+atlas = ExtResource("5_c0hdp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vlyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2l05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i87u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o51f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr5fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eyw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2l05")
+}],
+"loop": false,
+"name": &"右上攻击",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ktht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmjnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7km0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd5mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rapsw")
+}],
+"loop": false,
+"name": &"右下攻击",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ml0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eskqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3iq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bi8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n4ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg40v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4si05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulafc")
+}],
+"loop": true,
+"name": &"向右走",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6yyr")
+}],
+"loop": true,
+"name": &"向右静止",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y7fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aen8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfn7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg536")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6v4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_265v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq3cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cq6i")
+}],
+"loop": true,
+"name": &"向左走",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn12r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ufdt")
+}],
+"loop": true,
+"name": &"向左静止",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuc1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwko8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddrs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqxk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e2fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuc1l")
+}],
+"loop": false,
+"name": &"左上攻击",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d58uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2pg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcuw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgdcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak7fw")
+}],
+"loop": false,
+"name": &"左下攻击",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0j5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmq31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on3rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi3l")
+}],
+"loop": false,
+"name": &"死亡",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nosdi"]
+size = Vector2(30, 53)
+
+[sub_resource type="Animation" id="Animation_qkmri"]
+resource_name = "右上攻击"
+length = 0.667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"右上攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/RightUpAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f7ok2"]
+resource_name = "右下攻击"
+length = 0.715
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"右下攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/RightLowAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.288),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_iqgtt"]
+resource_name = "向右走"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"向右走", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5c57e"]
+resource_name = "向左走"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"向左走", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_713ad"]
+resource_name = "左上攻击"
+length = 0.667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"左上攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/LeftUpAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_sfo15"]
+resource_name = "左下攻击"
+length = 0.715
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"左下攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/LeftLowAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.288),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b8qqy"]
+resource_name = "死亡"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"死亡", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Dead")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iufnn"]
+_data = {
+"右上攻击": SubResource("Animation_qkmri"),
+"右下攻击": SubResource("Animation_f7ok2"),
+"向右走": SubResource("Animation_iqgtt"),
+"向左走": SubResource("Animation_5c57e"),
+"左上攻击": SubResource("Animation_713ad"),
+"左下攻击": SubResource("Animation_sfo15"),
+"死亡": SubResource("Animation_b8qqy")
+}
+
+[node name="OrcishSwordman" type="CharacterBody2D"]
+position = Vector2(526, 295)
+collision_layer = 4
+script = ExtResource("1_cu1f0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7vlyx")
+animation = &"左上攻击"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.25)
+shape = SubResource("RectangleShape2D_nosdi")
+
+[node name="RightDownCast" type="RayCast2D" parent="."]
+position = Vector2(20, 2)
+target_position = Vector2(0, 35)
+
+[node name="LeftDownCast" type="RayCast2D" parent="."]
+position = Vector2(-20, 2)
+target_position = Vector2(0, 35)
+
+[node name="LeftCast" type="RayCast2D" parent="."]
+position = Vector2(-1, 23)
+target_position = Vector2(-25, 1)
+
+[node name="RightCast" type="RayCast2D" parent="."]
+position = Vector2(-1, 23)
+target_position = Vector2(25, 1)
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("7_to5am")
+
+[node name="RightRun" type="Node" parent="FSM"]
+script = ExtResource("8_dn7si")
+
+[node name="LeftRun" type="Node" parent="FSM"]
+script = ExtResource("8_5rdy5")
+
+[node name="RightUpAttack" type="Node" parent="FSM"]
+script = ExtResource("9_rdj6e")
+
+[node name="Timer" type="Timer" parent="FSM/RightUpAttack"]
+one_shot = true
+
+[node name="RightLowAttack" type="Node" parent="FSM"]
+script = ExtResource("10_fqa85")
+
+[node name="Timer" type="Timer" parent="FSM/RightLowAttack"]
+one_shot = true
+
+[node name="LeftUpAttack" type="Node" parent="FSM"]
+script = ExtResource("11_nomvb")
+
+[node name="Timer" type="Timer" parent="FSM/LeftUpAttack"]
+one_shot = true
+
+[node name="LeftLowAttack" type="Node" parent="FSM"]
+script = ExtResource("12_upqts")
+
+[node name="Timer" type="Timer" parent="FSM/LeftLowAttack"]
+one_shot = true
+
+[node name="Be_Attack" type="Node" parent="FSM"]
+script = ExtResource("13_qummv")
+
+[node name="Dead" type="Node" parent="FSM"]
+script = ExtResource("14_d6bt3")
+
+[node name="LeftIDLE" type="Node" parent="FSM"]
+script = ExtResource("16_n8jsu")
+
+[node name="RightIDLE" type="Node" parent="FSM"]
+script = ExtResource("17_ws3f7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iufnn")
+}
+
+[node name="AttackCheck" type="Node2D" parent="."]
+
+[node name="RU" type="Area2D" parent="AttackCheck"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackCheck/RU"]
+position = Vector2(17, -2)
+polygon = PackedVector2Array(4, 0, 34, -9, 48, -7, 58, -3, 62, 4, 44, 12, 7, 16, 40, 8, 19, 3, 10, 7, 6, 5)
+
+[node name="RL" type="Area2D" parent="AttackCheck"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackCheck/RL"]
+position = Vector2(20, 13)
+polygon = PackedVector2Array(0, 0, 6, -2, 22, 1, 34, -3, 1, -10, 38, -8, 56, 0, 54, 6, 41, 13, 29, 13, -2, 5)
+
+[node name="LU" type="Area2D" parent="AttackCheck"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackCheck/LU"]
+position = Vector2(-29, 6)
+polygon = PackedVector2Array(-3, -3, -26, -1, -27, 3, 12, 9, -32, 6, -50, -2, -49, -9, -33, -16, -22, -16, 8, -7, 0, 1)
+
+[node name="LL" type="Area2D" parent="AttackCheck"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackCheck/LL"]
+visibility_layer = 2
+position = Vector2(-20, 11)
+polygon = PackedVector2Array(0, 1, -5, -1, -8, 2, -32, -3, 3, -11, -35, -7, -55, 1, -55, 5, -51, 10, -36, 15, -27, 15, 4, 6)
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Be_Attack" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("16_og3pr")
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("17_880pn")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/RightRun" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/LeftRun" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/RightUpAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/RightLowAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/LeftUpAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/LeftLowAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Be_Attack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Dead" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="FSM/RightUpAttack/Timer" to="FSM/RightUpAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="FSM/RightLowAttack/Timer" to="FSM/RightLowAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="FSM/LeftUpAttack/Timer" to="FSM/LeftUpAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="FSM/LeftLowAttack/Timer" to="FSM/LeftLowAttack" method="_on_timer_timeout"]

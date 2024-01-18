@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d2xea2yg8eqds"]
+
+[ext_resource type="Texture2D" uid="uid://dhq2kyhexbvgg" path="res://背包系统/素材/#1 - Transparent Icons.png" id="1_1d1jn"]
+
+[resource]
+atlas = ExtResource("1_1d1jn")
+region = Rect2(0, 160, 32, 32)

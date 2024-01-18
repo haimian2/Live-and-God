@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://crhojoe4ljwt8"]
+
+[ext_resource type="Script" path="res://商店系统/脚本/DayAndNightCycle.gd" id="1_0283i"]
+
+[node name="DayAndNightCycle" type="DirectionalLight2D"]
+script = ExtResource("1_0283i")
+
+[node name="morningTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="dayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="eveningTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="nightTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimeUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="TimeUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TimeUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="TimeUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[connection signal="timeout" from="morningTimer" to="." method="_on_morning_timer_timeout"]
+[connection signal="timeout" from="dayTimer" to="." method="_on_day_timer_timeout"]
+[connection signal="timeout" from="eveningTimer" to="." method="_on_evening_timer_timeout"]
+[connection signal="timeout" from="nightTimer" to="." method="_on_night_timer_timeout"]

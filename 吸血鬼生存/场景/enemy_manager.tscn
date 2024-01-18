@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://yqomj2tm7oeq"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/EnemyManager.gd" id="1_g4doq"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_g4doq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

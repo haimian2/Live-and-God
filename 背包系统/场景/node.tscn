@@ -1,0 +1,548 @@
+[gd_scene load_steps=51 format=3 uid="uid://b8wfb0xkfkcva"]
+
+[ext_resource type="Script" path="res://背包系统/脚本/BackpackRoot.gd" id="1_gvlun"]
+[ext_resource type="Script" path="res://背包系统/脚本/BackPackInterface.gd" id="2_ati5r"]
+[ext_resource type="Texture2D" uid="uid://dghfpaajbps5h" path="res://背包系统/素材/border_pixian_ai.png" id="3_7txqr"]
+[ext_resource type="Script" path="res://背包系统/脚本/Attribute.gd" id="4_rt8j3"]
+[ext_resource type="Texture2D" uid="uid://8pfoiculmxfk" path="res://游戏资源/主角/其他/普通头像.png" id="5_mlief"]
+[ext_resource type="Texture2D" uid="uid://cai3jgsh17fkq" path="res://背包系统/素材/icon1.png" id="6_758g1"]
+[ext_resource type="Script" path="res://背包系统/脚本/EquipInventory.gd" id="7_bo41d"]
+[ext_resource type="Script" path="res://背包系统/脚本/PlayerInventory.gd" id="8_1orih"]
+[ext_resource type="PackedScene" uid="uid://dva6h1v8gjc88" path="res://背包系统/场景/slot.tscn" id="9_rhh4m"]
+[ext_resource type="PackedScene" uid="uid://bjb1yk2fjx474" path="res://角色场景/主角/主角.tscn" id="10_tptx5"]
+[ext_resource type="Script" path="res://背包系统/脚本/inventory_data.gd" id="11_bmh6b"]
+[ext_resource type="Resource" uid="uid://vosxiqgyygth" path="res://背包系统/资源/apple.tres" id="12_3nbxf"]
+[ext_resource type="Script" path="res://背包系统/脚本/slot_data.gd" id="13_47cf6"]
+[ext_resource type="Resource" uid="uid://etqvoqofvnxw" path="res://背包系统/资源/steelsword.tres" id="14_m4cxg"]
+[ext_resource type="Script" path="res://背包系统/脚本/item_data.gd" id="15_n3fja"]
+[ext_resource type="Resource" uid="uid://chmvcjgdfyy1d" path="res://背包系统/资源/woodensword.tres" id="16_gl46b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qwvw"]
+texture = ExtResource("3_7txqr")
+texture_margin_left = 87.0
+texture_margin_top = 70.0
+texture_margin_right = 87.0
+texture_margin_bottom = 70.0
+expand_margin_left = 30.0
+expand_margin_top = 25.0
+expand_margin_right = 30.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="Theme" id="Theme_f82qm"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7qwvw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5s3l"]
+atlas = ExtResource("6_758g1")
+region = Rect2(92, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heigb"]
+atlas = ExtResource("6_758g1")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxt4p"]
+atlas = ExtResource("6_758g1")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whggh"]
+atlas = ExtResource("6_758g1")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7he7"]
+atlas = ExtResource("6_758g1")
+region = Rect2(94, 162, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agi23"]
+atlas = ExtResource("6_758g1")
+region = Rect2(436, 230, 24, 28)
+
+[sub_resource type="Theme" id="Theme_23vv7"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7qwvw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6kax"]
+
+[sub_resource type="Theme" id="Theme_2wqbk"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_a6kax")
+
+[sub_resource type="Theme" id="Theme_edyab"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7qwvw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxs50"]
+
+[sub_resource type="Theme" id="Theme_1p2o3"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_uxs50")
+
+[sub_resource type="Resource" id="Resource_rjbkp"]
+script = ExtResource("13_47cf6")
+item_data = ExtResource("12_3nbxf")
+quantity = 7
+
+[sub_resource type="Resource" id="Resource_onm0y"]
+script = ExtResource("13_47cf6")
+item_data = ExtResource("14_m4cxg")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_qxo7i"]
+script = ExtResource("11_bmh6b")
+slot_datas = Array[ExtResource("13_47cf6")]([SubResource("Resource_rjbkp"), SubResource("Resource_onm0y"), null, null, null, null, null, null, null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_t7tti"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_sm1eu"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_t7tti")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_kae3f"]
+script = ExtResource("13_47cf6")
+item_data = ExtResource("16_gl46b")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_pyqdq"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_gxm2e"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_pyqdq")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_0kc38"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_avot2"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_0kc38")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_u27d4"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_4xjve"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_u27d4")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_p2ek4"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_ittrb"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_p2ek4")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_jnbg6"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_a05oc"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_jnbg6")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_p3l44"]
+script = ExtResource("15_n3fja")
+name = ""
+description = ""
+stackable = false
+type = 0
+add_health = 0
+add_magic = 0
+add_damage = 0
+add_defense = 0
+add_energy = 0
+
+[sub_resource type="Resource" id="Resource_ukcr3"]
+script = ExtResource("13_47cf6")
+item_data = SubResource("Resource_p3l44")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_pbr7o"]
+script = ExtResource("11_bmh6b")
+slot_datas = Array[ExtResource("13_47cf6")]([SubResource("Resource_sm1eu"), SubResource("Resource_kae3f"), SubResource("Resource_gxm2e"), SubResource("Resource_avot2"), SubResource("Resource_4xjve"), SubResource("Resource_ittrb"), SubResource("Resource_a05oc"), SubResource("Resource_ukcr3")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8l7c"]
+size = Vector2(2271, 20)
+
+[node name="Node" type="Node"]
+script = ExtResource("1_gvlun")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_gvlun")
+
+[node name="Backpack" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 325.0
+offset_top = 175.0
+offset_right = 1825.0
+offset_bottom = 775.0
+script = ExtResource("2_ati5r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Backpack"]
+layout_mode = 2
+offset_right = 1500.0
+offset_bottom = 650.0
+
+[node name="Attribute" type="PanelContainer" parent="UI/Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_f82qm")
+script = ExtResource("4_rt8j3")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_mlief")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "生命值"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_l5s3l")
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "法力值"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_heigb")
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "攻击力"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_cxt4p")
+
+[node name="MarginContainer5" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "防御力
+"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_whggh")
+
+[node name="MarginContainer6" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "体力值"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "12"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s7he7")
+
+[node name="MarginContainer7" type="MarginContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Label" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "剩余点"
+
+[node name="Label2" type="Label" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "00"
+
+[node name="TextureButton" type="TextureButton" parent="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_agi23")
+
+[node name="EquipInventory" type="PanelContainer" parent="UI/Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_23vv7")
+script = ExtResource("7_bo41d")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Backpack/HBoxContainer/EquipInventory"]
+layout_mode = 2
+theme = SubResource("Theme_2wqbk")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="UI/Backpack/HBoxContainer/EquipInventory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="PlayerInventory" type="PanelContainer" parent="UI/Backpack/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_edyab")
+script = ExtResource("8_1orih")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Backpack/HBoxContainer/PlayerInventory"]
+layout_mode = 2
+theme = SubResource("Theme_1p2o3")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Backpack/HBoxContainer/PlayerInventory/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer2" type="GridContainer" parent="UI/Backpack/HBoxContainer/PlayerInventory/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 6
+
+[node name="GrabbedSlot" parent="UI/Backpack" instance=ExtResource("9_rhh4m")]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Node2D" parent="UI/Backpack"]
+position = Vector2(-48, -270)
+
+[node name="Label" type="Label" parent="UI/Backpack/Label"]
+offset_left = 613.0
+offset_top = 484.0
+offset_right = 653.0
+offset_bottom = 507.0
+text = "头部"
+
+[node name="Label2" type="Label" parent="UI/Backpack/Label"]
+offset_left = 730.0
+offset_top = 480.0
+offset_right = 770.0
+offset_bottom = 503.0
+text = "攻击"
+
+[node name="Label3" type="Label" parent="UI/Backpack/Label"]
+offset_left = 613.0
+offset_top = 596.0
+offset_right = 653.0
+offset_bottom = 619.0
+text = "胸部"
+
+[node name="Label4" type="Label" parent="UI/Backpack/Label"]
+offset_left = 730.0
+offset_top = 596.0
+offset_right = 770.0
+offset_bottom = 619.0
+text = "防御"
+
+[node name="Label5" type="Label" parent="UI/Backpack/Label"]
+offset_left = 613.0
+offset_top = 704.0
+offset_right = 653.0
+offset_bottom = 727.0
+text = "腿部"
+
+[node name="Label6" type="Label" parent="UI/Backpack/Label"]
+offset_left = 730.0
+offset_top = 704.0
+offset_right = 770.0
+offset_bottom = 727.0
+text = "戒指"
+
+[node name="Label7" type="Label" parent="UI/Backpack/Label"]
+offset_left = 613.0
+offset_top = 820.0
+offset_right = 653.0
+offset_bottom = 843.0
+text = "鞋子"
+
+[node name="Label8" type="Label" parent="UI/Backpack/Label"]
+offset_left = 730.0
+offset_top = 820.0
+offset_right = 770.0
+offset_bottom = 843.0
+text = "戒指"
+
+[node name="Hero" parent="." instance=ExtResource("10_tptx5")]
+inventory_data = SubResource("Resource_qxo7i")
+inventory_data_equipped = SubResource("Resource_pbr7o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1133.5, 772)
+shape = SubResource("RectangleShape2D_v8l7c")
+
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer2/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_hp"]
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer3/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_magic"]
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer4/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_damage"]
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer5/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_defense"]
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer6/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_energy"]
+[connection signal="pressed" from="UI/Backpack/HBoxContainer/Attribute/MarginContainer/GridContainer/MarginContainer7/GridContainer/TextureButton" to="UI/Backpack/HBoxContainer/Attribute" method="_on_texture_button_pressed_reset"]

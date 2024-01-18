@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://db13iva4ri7bm"]
+
+[ext_resource type="Script" path="res://游戏资源/地图/交互/GoldCoin.gd" id="1_awcnn"]
+[ext_resource type="Texture2D" uid="uid://cjjvlqpkbo0ue" path="res://游戏资源/地图/交互/资源/可交互图块1_pixian_ai.png" id="2_2xnru"]
+[ext_resource type="AudioStream" uid="uid://b758blxg003hd" path="res://游戏资源/地图/交互/资源/吃金币.mp3" id="3_aihyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxldr"]
+size = Vector2(10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ios2s"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(134, 206, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmaid"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(166, 206, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdiyh"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(198, 206, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkbnf"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(230, 206, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0piy8"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(262, 206, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46djh"]
+atlas = ExtResource("2_2xnru")
+region = Rect2(294, 206, 18, 18)
+
+[sub_resource type="Animation" id="Animation_fhhmv"]
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_ios2s"), SubResource("AtlasTexture_nmaid"), SubResource("AtlasTexture_kdiyh"), SubResource("AtlasTexture_wkbnf"), SubResource("AtlasTexture_0piy8"), SubResource("AtlasTexture_46djh")]
+}
+
+[sub_resource type="Animation" id="Animation_2f3do"]
+resource_name = "吃"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6y41s"]
+resource_name = "硬币"
+length = 0.9
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxypj"]
+_data = {
+"RESET": SubResource("Animation_fhhmv"),
+"吃": SubResource("Animation_2f3do"),
+"硬币": SubResource("Animation_6y41s")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkwdi"]
+radius = 11.0454
+
+[node name="GoldCoin" type="CharacterBody2D"]
+position = Vector2(9, 8)
+collision_layer = 0
+script = ExtResource("1_awcnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_vxldr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bxypj")
+}
+autoplay = "RESET"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ios2s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aihyk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qkwdi")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

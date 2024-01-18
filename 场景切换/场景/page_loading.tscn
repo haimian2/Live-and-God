@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://s7feixb1lbjr"]
+
+[ext_resource type="Script" path="res://场景切换/脚本/page_loading.gd" id="1_wqo4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6s3u"]
+bg_color = Color(0.490196, 0.6, 0.6, 1)
+
+[node name="page_loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqo4v")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 945.0
+offset_right = 1533.0
+offset_bottom = 1001.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_e6s3u")

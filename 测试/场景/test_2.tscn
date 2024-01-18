@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2qwpa26tyski"]
+
+[ext_resource type="Script" path="res://测试/脚本/test_2.gd" id="1_uymxb"]
+
+[node name="test2" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 413.0
+offset_top = 234.0
+offset_right = -414.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "aaaaaaaa"
+script = ExtResource("1_uymxb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

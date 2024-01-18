@@ -1,0 +1,1231 @@
+[gd_scene load_steps=162 format=3 uid="uid://bjb1yk2fjx474"]
+
+[ext_resource type="Script" path="res://角色场景/主角/主角.gd" id="1_1ccy0"]
+[ext_resource type="Texture2D" uid="uid://4c5goa815hp4" path="res://游戏资源/主角/动画/一段攻击/1_pixian_ai.png" id="2_bk2dk"]
+[ext_resource type="Resource" uid="uid://n3ndtoxc30wl" path="res://测试/test_inv.tres" id="2_g8bpw"]
+[ext_resource type="Texture2D" uid="uid://ck8unccyfvigx" path="res://游戏资源/主角/动画/一段攻击/2_pixian_ai.png" id="3_lyg0w"]
+[ext_resource type="Texture2D" uid="uid://dm7vkeoeeuvv8" path="res://游戏资源/主角/动画/一段攻击/3_pixian_ai.png" id="4_cvtn4"]
+[ext_resource type="Texture2D" uid="uid://bwievqotgpuyv" path="res://游戏资源/主角/动画/一段攻击/4_pixian_ai.png" id="5_n0x6h"]
+[ext_resource type="Texture2D" uid="uid://c2hyfn78880ys" path="res://游戏资源/主角/动画/一段攻击/5_pixian_ai.png" id="6_dbg66"]
+[ext_resource type="Texture2D" uid="uid://82gnpr53cb8y" path="res://游戏资源/主角/动画/一段攻击/6_pixian_ai.png" id="7_qc0ub"]
+[ext_resource type="Texture2D" uid="uid://bpl5c1drcn8g0" path="res://游戏资源/主角/动画/一段攻击/7_pixian_ai.png" id="8_ngjgc"]
+[ext_resource type="Texture2D" uid="uid://b55avvn0y5drk" path="res://游戏资源/主角/动画/一段攻击/8_pixian_ai.png" id="9_w5mbg"]
+[ext_resource type="Texture2D" uid="uid://c2gl87jyys3bo" path="res://游戏资源/主角/动画/一段攻击/9_pixian_ai.png" id="10_t0mmi"]
+[ext_resource type="Texture2D" uid="uid://885i6g0t8jov" path="res://游戏资源/主角/动画/一段攻击/10_pixian_ai.png" id="11_6wox5"]
+[ext_resource type="Texture2D" uid="uid://b1stty5da8pxf" path="res://游戏资源/主角/动画/一段攻击/11_pixian_ai.png" id="12_7x1qn"]
+[ext_resource type="Texture2D" uid="uid://dnvq7jur5gid4" path="res://游戏资源/主角/动画/三段攻击/20_pixian_ai.png" id="13_hn2aj"]
+[ext_resource type="Texture2D" uid="uid://cunt24vryu4vo" path="res://游戏资源/主角/动画/三段攻击/21_pixian_ai.png" id="14_wgpgn"]
+[ext_resource type="Texture2D" uid="uid://bve8of6oeedvv" path="res://游戏资源/主角/动画/三段攻击/22_pixian_ai.png" id="15_icndk"]
+[ext_resource type="Texture2D" uid="uid://dcov0aqaf13og" path="res://游戏资源/主角/动画/跳跃/11_pixian_ai.png" id="15_siy3c"]
+[ext_resource type="Texture2D" uid="uid://wv7ytt5nda3r" path="res://游戏资源/主角/动画/跳跃/12_pixian_ai.png" id="16_417ba"]
+[ext_resource type="Texture2D" uid="uid://l2mkpeiep8ou" path="res://游戏资源/主角/动画/三段攻击/23_pixian_ai.png" id="16_otuxg"]
+[ext_resource type="Texture2D" uid="uid://bb2qng7lsr6fq" path="res://游戏资源/主角/动画/三段攻击/24_pixian_ai.png" id="17_4u4vd"]
+[ext_resource type="Texture2D" uid="uid://c1yrwibi6x6wp" path="res://游戏资源/主角/动画/跳跃/13_pixian_ai.png" id="17_8qjfx"]
+[ext_resource type="Texture2D" uid="uid://gtoxerbq0jtj" path="res://游戏资源/主角/动画/三段攻击/25_pixian_ai.png" id="18_3vvpx"]
+[ext_resource type="Texture2D" uid="uid://dywgk5vlm234s" path="res://游戏资源/主角/动画/跳跃/14_pixian_ai.png" id="18_6wd87"]
+[ext_resource type="Texture2D" uid="uid://d1ksr6j0hmgww" path="res://游戏资源/主角/动画/三段攻击/26_pixian_ai.png" id="19_0ma1q"]
+[ext_resource type="Texture2D" uid="uid://bvgx3gaw12q48" path="res://游戏资源/主角/动画/跳跃/15_pixian_ai.png" id="19_ye6sy"]
+[ext_resource type="Texture2D" uid="uid://kr0pdpcs5qft" path="res://游戏资源/主角/动画/三段攻击/27_pixian_ai.png" id="20_5be4k"]
+[ext_resource type="Texture2D" uid="uid://dsqcy4fqvgrpc" path="res://游戏资源/主角/动画/三段攻击/28_pixian_ai.png" id="21_bntt8"]
+[ext_resource type="Texture2D" uid="uid://b4i877iagb6qr" path="res://游戏资源/主角/动画/跳跃/17_pixian_ai.png" id="21_u368l"]
+[ext_resource type="Texture2D" uid="uid://bv8wbd54m7bb" path="res://游戏资源/主角/动画/跳跃/18_pixian_ai.png" id="22_x7bpi"]
+[ext_resource type="Texture2D" uid="uid://clthg154p8s7k" path="res://游戏资源/主角/动画/跳跃/19_pixian_ai.png" id="23_gy5og"]
+[ext_resource type="Texture2D" uid="uid://coms4o8l6sbix" path="res://游戏资源/主角/动画/跳跃/20_pixian_ai.png" id="24_6ur32"]
+[ext_resource type="Texture2D" uid="uid://bpdo55fhx3c02" path="res://游戏资源/主角/动画/受击/1_pixian_ai.png" id="25_8i3up"]
+[ext_resource type="Texture2D" uid="uid://cxqua7mv2v3di" path="res://游戏资源/主角/动画/受击/2_pixian_ai.png" id="26_mkiad"]
+[ext_resource type="Texture2D" uid="uid://c5x4n583yqhfo" path="res://游戏资源/主角/动画/受击/3_pixian_ai.png" id="27_fdbwv"]
+[ext_resource type="Texture2D" uid="uid://i32yhvhqjt1b" path="res://游戏资源/主角/动画/受击/4_pixian_ai.png" id="28_5p7vx"]
+[ext_resource type="Texture2D" uid="uid://cjnvvw2yh1jox" path="res://游戏资源/主角/动画/受击/5_pixian_ai.png" id="29_encr7"]
+[ext_resource type="Texture2D" uid="uid://icthsnlr7367" path="res://游戏资源/主角/动画/受击/6_pixian_ai.png" id="30_dl6ig"]
+[ext_resource type="Texture2D" uid="uid://8cpdvb757a7c" path="res://游戏资源/主角/动画/格挡/1_pixian_ai.png" id="31_48adw"]
+[ext_resource type="Texture2D" uid="uid://bidignrfsiqg0" path="res://游戏资源/主角/动画/格挡/2_pixian_ai.png" id="32_p4yiv"]
+[ext_resource type="Texture2D" uid="uid://chb1fqc7djssn" path="res://游戏资源/主角/动画/格挡/3_pixian_ai.png" id="33_dcndt"]
+[ext_resource type="Texture2D" uid="uid://11uj51mpg32e" path="res://游戏资源/主角/动画/格挡/4_pixian_ai.png" id="34_5qulh"]
+[ext_resource type="Texture2D" uid="uid://pegjjv3fq23i" path="res://游戏资源/主角/动画/格挡/5_pixian_ai.png" id="35_jelfp"]
+[ext_resource type="Texture2D" uid="uid://cq2t82lya2o7h" path="res://游戏资源/主角/动画/格挡/6_pixian_ai.png" id="36_52cw1"]
+[ext_resource type="Texture2D" uid="uid://b0qung3m3sph2" path="res://游戏资源/主角/动画/格挡/7_pixian_ai.png" id="37_uf8ao"]
+[ext_resource type="Texture2D" uid="uid://csjcxviky6mte" path="res://游戏资源/主角/动画/格挡/8_pixian_ai.png" id="38_icqxc"]
+[ext_resource type="Texture2D" uid="uid://bpl1yjbl3a4w1" path="res://游戏资源/主角/动画/格挡/9_pixian_ai.png" id="39_x327g"]
+[ext_resource type="Texture2D" uid="uid://dqm2284vqeict" path="res://游戏资源/主角/动画/格挡/10_pixian_ai.png" id="40_hsrvg"]
+[ext_resource type="Texture2D" uid="uid://mvsikn2n0nkv" path="res://游戏资源/主角/动画/二段攻击/8_pixian_ai.png" id="41_xd458"]
+[ext_resource type="Texture2D" uid="uid://b7huc0vrlg0fb" path="res://游戏资源/主角/动画/死亡/1_pixian_ai.png" id="41_y83je"]
+[ext_resource type="Texture2D" uid="uid://beg5xqqj2uf72" path="res://游戏资源/主角/动画/二段攻击/9_pixian_ai.png" id="42_mv8r8"]
+[ext_resource type="Texture2D" uid="uid://btb05dcormbul" path="res://游戏资源/主角/动画/死亡/2_pixian_ai.png" id="42_u87qd"]
+[ext_resource type="Texture2D" uid="uid://bgdknvwchljgn" path="res://游戏资源/主角/动画/二段攻击/10_pixian_ai.png" id="43_57oxa"]
+[ext_resource type="Texture2D" uid="uid://dluu8qrwnh7dd" path="res://游戏资源/主角/动画/死亡/3_pixian_ai.png" id="43_pv1qa"]
+[ext_resource type="Texture2D" uid="uid://bx8h2vvmuiccj" path="res://游戏资源/主角/动画/二段攻击/11_pixian_ai.png" id="44_1p6dc"]
+[ext_resource type="Texture2D" uid="uid://b70ki7a87v5w4" path="res://游戏资源/主角/动画/死亡/4_pixian_ai.png" id="44_2l16s"]
+[ext_resource type="Texture2D" uid="uid://cr6f5bbdhif33" path="res://游戏资源/主角/动画/死亡/5_pixian_ai.png" id="45_owx6t"]
+[ext_resource type="Texture2D" uid="uid://cr6s3veuhniiy" path="res://游戏资源/主角/动画/二段攻击/12_pixian_ai.png" id="45_q6fy1"]
+[ext_resource type="Texture2D" uid="uid://beio7oqeoc5ij" path="res://游戏资源/主角/动画/二段攻击/13_pixian_ai.png" id="46_1kk0f"]
+[ext_resource type="Texture2D" uid="uid://1kxdvtapescq" path="res://游戏资源/主角/动画/死亡/6_pixian_ai.png" id="46_82okq"]
+[ext_resource type="Texture2D" uid="uid://c7ylikk5riu6y" path="res://游戏资源/主角/动画/死亡/7_pixian_ai.png" id="47_1mjt6"]
+[ext_resource type="Texture2D" uid="uid://b4qqwd58lr0hl" path="res://游戏资源/主角/动画/二段攻击/14_pixian_ai.png" id="47_fv8sg"]
+[ext_resource type="Texture2D" uid="uid://bq2akgxoh2paq" path="res://游戏资源/主角/动画/二段攻击/15_pixian_ai.png" id="48_7aqay"]
+[ext_resource type="Texture2D" uid="uid://b8u2ratwykwdn" path="res://游戏资源/主角/动画/死亡/8_pixian_ai.png" id="48_vxyeg"]
+[ext_resource type="Texture2D" uid="uid://b8pys52x3y5fo" path="res://游戏资源/主角/动画/死亡/9_pixian_ai.png" id="49_7qjl1"]
+[ext_resource type="Texture2D" uid="uid://fd5i0afqfqh7" path="res://游戏资源/主角/动画/二段攻击/16_pixian_ai.png" id="49_orphy"]
+[ext_resource type="Texture2D" uid="uid://clokdi73icyjq" path="res://游戏资源/主角/动画/二段攻击/17_pixian_ai.png" id="50_h3l8b"]
+[ext_resource type="Texture2D" uid="uid://cmhiq50dh5nby" path="res://游戏资源/主角/动画/死亡/10_pixian_ai.png" id="50_svwys"]
+[ext_resource type="Texture2D" uid="uid://d2rh7585dfu5d" path="res://游戏资源/主角/动画/二段攻击/18_pixian_ai.png" id="51_sg63n"]
+[ext_resource type="Texture2D" uid="uid://chw0k164ek8sb" path="res://游戏资源/主角/动画/死亡/11_pixian_ai.png" id="51_ueo5y"]
+[ext_resource type="Texture2D" uid="uid://cgf170s88jjha" path="res://游戏资源/主角/动画/二段攻击/19_pixian_ai.png" id="52_66g7v"]
+[ext_resource type="Texture2D" uid="uid://m8pnrsm8ylg2" path="res://游戏资源/主角/动画/死亡/12_pixian_ai.png" id="52_s8oii"]
+[ext_resource type="Texture2D" uid="uid://cpsq7yvf5ys1u" path="res://游戏资源/主角/动画/死亡/13_pixian_ai.png" id="53_fprj5"]
+[ext_resource type="Texture2D" uid="uid://bb4l0mladxi62" path="res://游戏资源/主角/动画/特殊攻击/1_pixian_ai.png" id="54_hqbd5"]
+[ext_resource type="Texture2D" uid="uid://1o1ijtugr5h3" path="res://游戏资源/主角/动画/特殊攻击/2_pixian_ai.png" id="55_airil"]
+[ext_resource type="Texture2D" uid="uid://b1qkx6jh62ppw" path="res://游戏资源/主角/动画/特殊攻击/3_pixian_ai.png" id="56_cawr2"]
+[ext_resource type="Texture2D" uid="uid://c2ailpg1o3s8t" path="res://游戏资源/主角/动画/特殊攻击/8_pixian_ai.png" id="61_mnwrx"]
+[ext_resource type="Texture2D" uid="uid://bsewpddox8ky1" path="res://游戏资源/主角/动画/特殊攻击/9_pixian_ai.png" id="62_70tnd"]
+[ext_resource type="Texture2D" uid="uid://b7ip2hixkegfn" path="res://游戏资源/主角/动画/特殊攻击/10_pixian_ai.png" id="63_odn1k"]
+[ext_resource type="Texture2D" uid="uid://dfnqwia0gtagl" path="res://游戏资源/主角/动画/特殊攻击/11_pixian_ai.png" id="64_yjimy"]
+[ext_resource type="Texture2D" uid="uid://cphw1ses4sokj" path="res://游戏资源/主角/动画/特殊攻击/12_pixian_ai.png" id="65_32htn"]
+[ext_resource type="Texture2D" uid="uid://bgg48hgc7j6yc" path="res://游戏资源/主角/动画/特殊攻击/13_pixian_ai.png" id="66_3atmd"]
+[ext_resource type="Texture2D" uid="uid://dvc0itplfnhj2" path="res://游戏资源/主角/动画/特殊攻击/14_pixian_ai.png" id="67_iprrx"]
+[ext_resource type="Texture2D" uid="uid://c6ui36w4rbx1n" path="res://游戏资源/主角/动画/特殊攻击/15_pixian_ai.png" id="68_1u61l"]
+[ext_resource type="Texture2D" uid="uid://f8rq6ljb3fv5" path="res://游戏资源/主角/动画/特殊攻击/16_pixian_ai.png" id="69_hmnpo"]
+[ext_resource type="Texture2D" uid="uid://dp4ah3s07mtfg" path="res://游戏资源/主角/动画/特殊攻击/17_pixian_ai.png" id="70_bxau4"]
+[ext_resource type="Texture2D" uid="uid://bbj3alx5tb38o" path="res://游戏资源/主角/动画/特殊攻击/18_pixian_ai.png" id="71_gqgqu"]
+[ext_resource type="Texture2D" uid="uid://buuw35co8b0hm" path="res://游戏资源/主角/动画/翻滚/1_pixian_ai.png" id="72_3e5r3"]
+[ext_resource type="Texture2D" uid="uid://cvi5jgga6j21w" path="res://游戏资源/主角/动画/翻滚/2_pixian_ai.png" id="73_in0ep"]
+[ext_resource type="Texture2D" uid="uid://dfj0n5euw1fqh" path="res://游戏资源/主角/动画/翻滚/3_pixian_ai.png" id="74_rpy5g"]
+[ext_resource type="Texture2D" uid="uid://dvxhe2xmmh2b4" path="res://游戏资源/主角/动画/翻滚/4_pixian_ai.png" id="75_lslbp"]
+[ext_resource type="Texture2D" uid="uid://burmdycvmll6k" path="res://游戏资源/主角/动画/翻滚/5_pixian_ai.png" id="76_80eg0"]
+[ext_resource type="Texture2D" uid="uid://cxyhfysxcdrfs" path="res://游戏资源/主角/动画/翻滚/6_pixian_ai.png" id="77_ji2p8"]
+[ext_resource type="Texture2D" uid="uid://vgstxhe7u22w" path="res://游戏资源/主角/动画/翻滚/7_pixian_ai.png" id="78_hxx0w"]
+[ext_resource type="Texture2D" uid="uid://cyecjpxwx8k6t" path="res://游戏资源/主角/动画/跑动/1_pixian_ai.png" id="80_s5mil"]
+[ext_resource type="Texture2D" uid="uid://dnrmu7xn18dfg" path="res://游戏资源/主角/动画/跑动/2_pixian_ai.png" id="81_cqhye"]
+[ext_resource type="Texture2D" uid="uid://chkbfrvg5wssf" path="res://游戏资源/主角/动画/跑动/3_pixian_ai.png" id="82_luumh"]
+[ext_resource type="Texture2D" uid="uid://b3njs7u6anipd" path="res://游戏资源/主角/动画/跑动/4_pixian_ai.png" id="83_yduqp"]
+[ext_resource type="Texture2D" uid="uid://k6wdo0rxuepo" path="res://游戏资源/主角/动画/跑动/5_pixian_ai.png" id="84_71lfu"]
+[ext_resource type="Texture2D" uid="uid://dvsskn1wehiui" path="res://游戏资源/主角/动画/跑动/6_pixian_ai.png" id="85_feboe"]
+[ext_resource type="Texture2D" uid="uid://banhtbedssj7k" path="res://游戏资源/主角/动画/跑动/7_pixian_ai.png" id="86_yi0t8"]
+[ext_resource type="Texture2D" uid="uid://bwbjpirq4ldvp" path="res://游戏资源/主角/动画/跑动/8_pixian_ai.png" id="87_80yh5"]
+[ext_resource type="Texture2D" uid="uid://bkm2xfluw312m" path="res://游戏资源/主角/动画/跳跃/1_pixian_ai.png" id="88_cxi61"]
+[ext_resource type="Texture2D" uid="uid://c7jfmuglj86s0" path="res://游戏资源/主角/动画/跳跃/2_pixian_ai.png" id="89_yteow"]
+[ext_resource type="Texture2D" uid="uid://drc20a81ycw5d" path="res://游戏资源/主角/动画/跳跃/3_pixian_ai.png" id="90_brdx5"]
+[ext_resource type="Texture2D" uid="uid://cv5sq2em41s2f" path="res://游戏资源/主角/动画/跳跃/4_pixian_ai.png" id="91_bfllu"]
+[ext_resource type="Texture2D" uid="uid://b2iamxk6vr2b3" path="res://游戏资源/主角/动画/跳跃/5_pixian_ai.png" id="92_hst36"]
+[ext_resource type="Texture2D" uid="uid://c3ut68ksgbojc" path="res://游戏资源/主角/动画/跳跃/6_pixian_ai.png" id="93_3s0eh"]
+[ext_resource type="Texture2D" uid="uid://bov3i0c4ht06u" path="res://游戏资源/主角/动画/跳跃/7_pixian_ai.png" id="94_dpcqg"]
+[ext_resource type="Texture2D" uid="uid://dca5d6qwslnc5" path="res://游戏资源/主角/动画/跳跃/8_pixian_ai.png" id="95_03oo2"]
+[ext_resource type="Texture2D" uid="uid://cmicrjj2vx3q5" path="res://游戏资源/主角/动画/静止/2_pixian_ai.png" id="96_eiwbw"]
+[ext_resource type="Texture2D" uid="uid://bsa6555wloaon" path="res://游戏资源/主角/动画/静止/3_pixian_ai.png" id="97_6h6rb"]
+[ext_resource type="Texture2D" uid="uid://djti4twsedxjn" path="res://游戏资源/主角/动画/静止/4_pixian_ai.png" id="98_wq1t1"]
+[ext_resource type="Texture2D" uid="uid://b0r4pe2u0qt3i" path="res://游戏资源/主角/动画/静止/5_pixian_ai.png" id="99_e3tlh"]
+[ext_resource type="Texture2D" uid="uid://0vfxpf6iiq35" path="res://游戏资源/主角/动画/静止/6_pixian_ai.png" id="100_tkb6q"]
+[ext_resource type="Texture2D" uid="uid://hg8qbke1ev3d" path="res://游戏资源/主角/动画/静止/7_pixian_ai.png" id="101_e8ioa"]
+[ext_resource type="Texture2D" uid="uid://dv6q0b8130jco" path="res://游戏资源/主角/动画/静止/8_pixian_ai.png" id="102_dp8mj"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/状态管理器.gd" id="104_hg48l"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/静止状态.gd" id="105_aqpcw"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/跑动状态.gd" id="106_6ucgf"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/跳跃状态.gd" id="107_r03os"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/受击状态.gd" id="108_h4g0n"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/死亡状态.gd" id="109_6yq61"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/翻滚状态.gd" id="110_v0cf0"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/下落状态.gd" id="111_qspic"]
+[ext_resource type="AudioStream" uid="uid://dvhuvnpk5b531" path="res://游戏资源/主角/音效/跳跃.mp3" id="112_00361"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/一段攻击状态.gd" id="112_pj0gs"]
+[ext_resource type="AudioStream" uid="uid://c2pgywvdg6yn4" path="res://游戏资源/主角/音效/受击.mp3" id="113_sf4fb"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/特殊攻击.gd" id="127_towum"]
+[ext_resource type="AudioStream" uid="uid://c30n2n2qqd11h" path="res://游戏资源/主角/音效/加速后的特殊攻击.MP3" id="134_l8tec"]
+[ext_resource type="AudioStream" uid="uid://cprrqvphwt3ow" path="res://游戏资源/主角/音效/二段攻击加速1.75.MP3" id="135_7li1i"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/二段攻击状态.gd" id="140_02hmi"]
+[ext_resource type="Texture2D" uid="uid://b7nmcvo1mhl6l" path="res://游戏资源/主角/其他/蓝条.png" id="140_18dx0"]
+[ext_resource type="Texture2D" uid="uid://cl2o2uckmv6nn" path="res://游戏资源/地图/交互/资源/E_Key_Dark.png" id="140_lvbjt"]
+[ext_resource type="Texture2D" uid="uid://8pfoiculmxfk" path="res://游戏资源/主角/其他/普通头像.png" id="140_xomi7"]
+[ext_resource type="Script" path="res://角色场景/主角/状态机/三段攻击状态.gd" id="141_1yamb"]
+[ext_resource type="Texture2D" uid="uid://d2b5wkunreslt" path="res://背包系统/素材/blackborder.png" id="141_4l4ov"]
+[ext_resource type="Script" path="res://角色场景/主角/show_money.gd" id="142_i12c7"]
+[ext_resource type="AudioStream" uid="uid://d1tmv5kps4nkb" path="res://游戏资源/主角/音效/一段攻击.MP3" id="142_k0s5s"]
+[ext_resource type="AudioStream" uid="uid://hgdug25fsxoo" path="res://游戏资源/主角/音效/死亡.mp3" id="145_hjv6c"]
+[ext_resource type="Texture2D" uid="uid://srdu85s2rwmy" path="res://游戏资源/主角/其他/空血槽.png" id="145_mp7bj"]
+[ext_resource type="Texture2D" uid="uid://djalcj26jt42h" path="res://游戏资源/主角/其他/血条.png" id="146_migx6"]
+[ext_resource type="AudioStream" uid="uid://c4p8cuph5lga4" path="res://游戏资源/主角/音效/爆炸.MP3" id="147_48pgp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmsop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bk2dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lyg0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cvtn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n0x6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dbg66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qc0ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ngjgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w5mbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t0mmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6wox5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7x1qn")
+}],
+"loop": false,
+"name": &"一段攻击",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_hn2aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wgpgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_icndk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_otuxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4u4vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3vvpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0ma1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5be4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bntt8")
+}],
+"loop": false,
+"name": &"三段攻击",
+"speed": 13.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_siy3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_417ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8qjfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6wd87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ye6sy")
+}],
+"loop": true,
+"name": &"下落",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_u368l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x7bpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gy5og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6ur32")
+}],
+"loop": false,
+"name": &"下落完成",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6wox5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t0mmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xd458")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_mv8r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_57oxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1p6dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_q6fy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_1kk0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_fv8sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7aqay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_orphy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_h3l8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_sg63n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_66g7v")
+}],
+"loop": false,
+"name": &"二段攻击",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_8i3up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mkiad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fdbwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5p7vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_encr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_dl6ig")
+}],
+"loop": false,
+"name": &"受击",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_48adw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p4yiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_dcndt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5qulh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jelfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_52cw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_uf8ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_icqxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_x327g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hsrvg")
+}],
+"loop": false,
+"name": &"格挡",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_y83je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_u87qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pv1qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_2l16s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_owx6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_82okq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1mjt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_vxyeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7qjl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_svwys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ueo5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_s8oii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fprj5")
+}],
+"loop": false,
+"name": &"死亡",
+"speed": 6.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_hqbd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_airil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_cawr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_mnwrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_70tnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_odn1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_yjimy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_32htn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_3atmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_iprrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1u61l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_hmnpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_bxau4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_gqgqu")
+}],
+"loop": false,
+"name": &"特殊攻击",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("72_3e5r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_in0ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rpy5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_lslbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_80eg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_ji2p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_hxx0w")
+}],
+"loop": false,
+"name": &"翻滚",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_s5mil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_cqhye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_luumh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_yduqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_71lfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_feboe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_yi0t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_80yh5")
+}],
+"loop": true,
+"name": &"跑动",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_yteow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_brdx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bfllu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hst36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_3s0eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_dpcqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_03oo2")
+}],
+"loop": false,
+"name": &"跳跃",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_eiwbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_6h6rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_wq1t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_e3tlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_tkb6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_e8ioa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_dp8mj")
+}],
+"loop": true,
+"name": &"静止",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_cxi61")
+}],
+"loop": false,
+"name": &"预跳跃",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey7lm"]
+size = Vector2(92.5, 139.5)
+
+[sub_resource type="Animation" id="Animation_2cc3t"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_06iq2"]
+resource_name = "一段攻击"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"一段攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/OneAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/First_Attack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:can_attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_nwmus"]
+resource_name = "三段攻击"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"三段攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/ThreeAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.222, 0.296, 0.37),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/Boom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.222),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:can_attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.222),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_kmelk"]
+resource_name = "二段攻击"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"二段攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Second_Attack_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.357),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/TwoAttack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.357, 0.428, 0.5, 0.571, 0.643, 0.714, 0.786),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"attack_check_1"
+}, {
+"args": [],
+"method": &"attack_check_2"
+}, {
+"args": [],
+"method": &"attack_check_3"
+}, {
+"args": [],
+"method": &"attack_check_4"
+}, {
+"args": [],
+"method": &"attack_check_5"
+}, {
+"args": [],
+"method": &"attack_check_6"
+}, {
+"args": [],
+"method": &"attack_check_7"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:can_attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.357),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_82ga3"]
+resource_name = "受击"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"受击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Be_Attack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l4a7k"]
+resource_name = "死亡"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"死亡", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Dead")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nsfar"]
+resource_name = "特殊攻击"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"特殊攻击", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/SpecialAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.571, 0.642, 0.714),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}, {
+"args": [],
+"method": &"attack_check"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/SpecialAttack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pcmc2"]
+resource_name = "翻滚"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"翻滚", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_unmatched")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.125, 0.3125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2psfq"]
+_data = {
+"RESET": SubResource("Animation_2cc3t"),
+"一段攻击": SubResource("Animation_06iq2"),
+"三段攻击": SubResource("Animation_nwmus"),
+"二段攻击": SubResource("Animation_kmelk"),
+"受击": SubResource("Animation_82ga3"),
+"死亡": SubResource("Animation_l4a7k"),
+"特殊攻击": SubResource("Animation_nsfar"),
+"翻滚": SubResource("Animation_pcmc2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8vrg"]
+radius = 124.036
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq7ur"]
+atlas = ExtResource("145_mp7bj")
+region = Rect2(0, 0, 132, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elydc"]
+atlas = ExtResource("146_migx6")
+region = Rect2(0, 0, 132, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8b6v"]
+atlas = ExtResource("145_mp7bj")
+region = Rect2(0, 0, 132, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scibd"]
+atlas = ExtResource("140_18dx0")
+region = Rect2(0, 0, 132, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct8cx"]
+atlas = ExtResource("141_4l4ov")
+region = Rect2(37, 106, 427, 269)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1km1e"]
+texture = SubResource("AtlasTexture_ct8cx")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="Theme_qit0d"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_1km1e")
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(577, 523)
+collision_layer = 2
+script = ExtResource("1_1ccy0")
+can_attack = true
+inventory_data = ExtResource("2_g8bpw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -121)
+sprite_frames = SubResource("SpriteFrames_jmsop")
+animation = &"特殊攻击"
+frame = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ey7lm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2psfq")
+}
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("104_hg48l")
+
+[node name="IDLE" type="Node" parent="FSM"]
+script = ExtResource("105_aqpcw")
+
+[node name="Run" type="Node" parent="FSM"]
+script = ExtResource("106_6ucgf")
+
+[node name="Jump" type="Node" parent="FSM"]
+script = ExtResource("107_r03os")
+
+[node name="Be_Attack" type="Node" parent="FSM"]
+script = ExtResource("108_h4g0n")
+
+[node name="Dead" type="Node" parent="FSM"]
+script = ExtResource("109_6yq61")
+
+[node name="Roll" type="Node" parent="FSM"]
+script = ExtResource("110_v0cf0")
+
+[node name="Fall" type="Node" parent="FSM"]
+script = ExtResource("111_qspic")
+
+[node name="OneAttack" type="Node" parent="FSM"]
+script = ExtResource("112_pj0gs")
+
+[node name="TwoAttack" type="Node" parent="FSM"]
+script = ExtResource("140_02hmi")
+
+[node name="ThreeAttack" type="Node" parent="FSM"]
+script = ExtResource("141_1yamb")
+
+[node name="SpecialAttack" type="Node" parent="FSM"]
+script = ExtResource("127_towum")
+
+[node name="Attack_Check" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -121)
+
+[node name="OneAttackCheck" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/OneAttackCheck"]
+visible = false
+position = Vector2(-82, -135)
+polygon = PackedVector2Array(149, 35, 166, 89, 147, 180, 229, 207, 246, 197, 268, 145, 270, 73, 228, 5, 148, -35, 86, -37)
+
+[node name="TwoAttackCheck_1" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_1"]
+visible = false
+position = Vector2(-84, -135)
+polygon = PackedVector2Array(149, 35, 166, 89, 147, 180, 229, 207, 260, 177, 268, 135, 266, 75, 226, 11, 154, -33, 68, -19)
+
+[node name="TwoAttackCheck_2" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_2"]
+position = Vector2(-94, 60)
+polygon = PackedVector2Array(0, -2, -43, -33, -64, -69, -34, -101, 75, -113, 85, -108, 99, -41, 53, -12)
+
+[node name="TwoAttackCheck_3" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_3"]
+position = Vector2(82, 71)
+polygon = PackedVector2Array(53, -11, -14, -6, -102, -3, -203, -35, -39, -52, -26, -71, 54, -30)
+
+[node name="TwoAttackCheck_4" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 242)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_4"]
+position = Vector2(175, -86)
+polygon = PackedVector2Array(0, -2, -98, -77, -177, -91, -191, -73, -271, -108, -252, -128, -107, -122, 0, -90, 36, -52, 37, -20)
+
+[node name="TwoAttackCheck_5" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_5"]
+position = Vector2(-8, 10)
+polygon = PackedVector2Array(-1, -1, -26, 29, -91, 47, -134, 26, -172, -8, -172, -44, -135, -76, -61, -93)
+
+[node name="TwoAttackCheck_6" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_6"]
+position = Vector2(54, -58)
+polygon = PackedVector2Array(2, -1, 60, -34, 130, -12, 167, 34, 159, 66, 84, 98, -42, 111, 18, 42)
+
+[node name="TwoAttackCheck_7" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/TwoAttackCheck_7"]
+position = Vector2(-34, -86)
+polygon = PackedVector2Array(1, 1, 92, -10, 213, 11, 254, 69, 156, 51, 20, 53, -13, 17)
+
+[node name="ThreeAttackCheck" type="Area2D" parent="Attack_Check"]
+visible = false
+position = Vector2(0, 121)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Check/ThreeAttackCheck"]
+position = Vector2(182, -35)
+shape = SubResource("CircleShape2D_c8vrg")
+
+[node name="SpecialAttackCheck" type="Area2D" parent="Attack_Check"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Check/SpecialAttackCheck"]
+position = Vector2(22, 51)
+polygon = PackedVector2Array(12, -6, 68, -46, 168, -6, 112, 102, 200, 134, 286, 108, 242, -70, 144, -96, 32, -80)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -130)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("112_00361")
+
+[node name="Be_Attack" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("113_sf4fb")
+
+[node name="First_Attack" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("142_k0s5s")
+
+[node name="Second_Attack_1" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("135_7li1i")
+
+[node name="Boom" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("147_48pgp")
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("145_hjv6c")
+
+[node name="SpecialAttack" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("134_l8tec")
+
+[node name="HeroProperty" type="CanvasLayer" parent="."]
+scale = Vector2(3.315, 3.315)
+transform = Transform2D(3.315, 0, 0, 3.315, 0, 0)
+
+[node name="Health" type="TextureProgressBar" parent="HeroProperty"]
+offset_left = 26.2443
+offset_right = 160.244
+offset_bottom = 8.0
+texture_under = SubResource("AtlasTexture_tq7ur")
+texture_progress = SubResource("AtlasTexture_elydc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Energy" type="TextureProgressBar" parent="HeroProperty"]
+offset_left = 26.2443
+offset_top = 8.1448
+offset_right = 158.244
+offset_bottom = 48.1448
+texture_under = SubResource("AtlasTexture_m8b6v")
+texture_progress = SubResource("AtlasTexture_scibd")
+
+[node name="Sprite2D" type="Sprite2D" parent="HeroProperty"]
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("140_xomi7")
+centered = false
+
+[node name="Delay_jump" type="Node" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="Delay_jump"]
+one_shot = true
+
+[node name="Interact" type="Node2D" parent="."]
+position = Vector2(0, -110)
+
+[node name="E_Key" type="Sprite2D" parent="Interact"]
+position = Vector2(-42, -48)
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("140_lvbjt")
+centered = false
+
+[node name="MoneyUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="MoneyUI"]
+offset_left = 1039.0
+offset_top = 11.0
+offset_right = 1143.0
+offset_bottom = 63.0
+theme = SubResource("Theme_qit0d")
+script = ExtResource("142_i12c7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MoneyUI/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MoneyUI/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "$"
+
+[node name="Label2" type="Label" parent="MoneyUI/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Be_Attack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Dead" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Roll" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Fall" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/OneAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/TwoAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/ThreeAttack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/SpecialAttack" method="_on_animated_sprite_2d_animation_finished"]
