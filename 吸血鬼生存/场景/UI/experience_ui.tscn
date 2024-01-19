@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b374p06gxyyk7"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/ExperienceUI.gd" id="1_2880c"]
+
+[node name="ExperienceUI" type="CanvasLayer"]
+script = ExtResource("1_2880c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+self_modulate = Color(0.117647, 0.658824, 0.356863, 1)
+layout_mode = 2
+size_flags_vertical = 1
+value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30

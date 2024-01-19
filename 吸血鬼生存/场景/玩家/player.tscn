@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjkwik3sqqsjd"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/Player.gd" id="1_xljx7"]
+[ext_resource type="PackedScene" uid="uid://d031qrgxn44i4" path="res://吸血鬼生存/场景/交互/health_component.tscn" id="2_u3gpn"]
+[ext_resource type="Texture2D" uid="uid://dxgmfaf3xsdf2" path="res://吸血鬼生存/资源/tile_0085.png" id="2_uqhq6"]
+[ext_resource type="PackedScene" uid="uid://c1gcog56286dm" path="res://吸血鬼生存/场景/玩家/flash_sword.tscn" id="3_go0td"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/Camera2D.gd" id="5_0penh"]
+[ext_resource type="PackedScene" uid="uid://c52jcd8k2agy1" path="res://吸血鬼生存/场景/交互/pick_box_component.tscn" id="5_m6b6o"]
+[ext_resource type="PackedScene" uid="uid://bpixsg61b7mtj" path="res://吸血鬼生存/场景/交互/hurt_box_component.tscn" id="7_p8sfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihyfj"]
+size = Vector2(16, 15.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oiq8a"]
+radius = 55.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqrmw"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+self_modulate = Color(0.537255, 1, 0.117647, 1)
+collision_layer = 2
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_xljx7")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_u3gpn")]
+
+[node name="SwordAbilityManager" type="Node" parent="."]
+
+[node name="FlashSword" parent="SwordAbilityManager" instance=ExtResource("3_go0td")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ihyfj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uqhq6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+script = ExtResource("5_0penh")
+
+[node name="PickBoxComponent" parent="." instance=ExtResource("5_m6b6o")]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickBoxComponent"]
+shape = SubResource("CircleShape2D_oiq8a")
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_p8sfy")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vqrmw")

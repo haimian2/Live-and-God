@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ertrox8rupns"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/drop_box_component.gd" id="1_ksanr"]
+
+[node name="DropBoxComponent" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+monitoring = false
+monitorable = false
+script = ExtResource("1_ksanr")

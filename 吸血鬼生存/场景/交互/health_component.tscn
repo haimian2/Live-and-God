@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d031qrgxn44i4"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/HealthComponent.gd" id="1_lj5fa"]
+
+[node name="HealthComponent" type="Node"]
+script = ExtResource("1_lj5fa")

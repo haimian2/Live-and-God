@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btr5t1uakcpvh"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/arena_time_ui.gd" id="1_vm5dp"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/arena_time_ui.gd" id="1_vm5dp"]
 
 [node name="ArenaTimeUI" type="CanvasLayer"]
 script = ExtResource("1_vm5dp")

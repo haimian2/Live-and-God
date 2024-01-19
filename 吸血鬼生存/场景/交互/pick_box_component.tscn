@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c52jcd8k2agy1"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/pick_box_component.gd" id="1_wl6bb"]
+
+[node name="PickBoxComponent" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_wl6bb")

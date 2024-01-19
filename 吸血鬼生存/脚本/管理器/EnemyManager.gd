@@ -2,7 +2,7 @@ extends Node
 
 @onready var timer: Timer = $Timer
 
-const MOUSE = preload("res://吸血鬼生存/场景/mouse.tscn")
+const MOUSE = preload("res://吸血鬼生存/场景/怪物/mouse.tscn")
 const SPAWN_RADIUS = 400
 
 func _ready() -> void:
@@ -17,5 +17,5 @@ func process_timeout()->void:
 	var spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 	
 	var enemy = MOUSE.instantiate() as Node2D
-	$"../Enemies".add_child(enemy)
+	owner.add_child(enemy)
 	enemy.global_position = spawn_position

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bchtv574fg1km"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/管理器/ExperienceManager.gd" id="1_js2rs"]
+
+[node name="ExperienceManager" type="Node"]
+script = ExtResource("1_js2rs")

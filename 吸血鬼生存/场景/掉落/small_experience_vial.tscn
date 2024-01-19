@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://celpddl3rhlpj"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/掉落/SmallExperienceVial.gd" id="1_14e6w"]
+[ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="2_46lpn"]
+[ext_resource type="PackedScene" uid="uid://ertrox8rupns" path="res://吸血鬼生存/场景/交互/drop_box_component.tscn" id="3_hvc8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcklx"]
+atlas = ExtResource("2_46lpn")
+region = Rect2(132, 162, 8, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hpgr"]
+radius = 19.0
+
+[node name="SmallExperienceVial" type="Node2D"]
+script = ExtResource("1_14e6w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gcklx")
+
+[node name="DropBoxComponent" parent="Sprite2D" instance=ExtResource("3_hvc8w")]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DropBoxComponent"]
+shape = SubResource("CircleShape2D_0hpgr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

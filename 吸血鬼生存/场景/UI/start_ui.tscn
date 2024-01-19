@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc0u7nhpun2q7"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/StartUI.gd" id="1_314sy"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/StartUI.gd" id="1_314sy"]
 [ext_resource type="AudioStream" uid="uid://b223ui0sp6bda" path="res://吸血鬼生存/资源/倒计时.mp3" id="2_r85q8"]
 
 [node name="StartUI" type="CanvasLayer"]

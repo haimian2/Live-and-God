@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uglp22q2ghgl"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/game_over_ui.gd" id="1_uuu7b"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/game_over_ui.gd" id="1_uuu7b"]
 
 [node name="GameOverUI" type="CanvasLayer"]
 process_mode = 3

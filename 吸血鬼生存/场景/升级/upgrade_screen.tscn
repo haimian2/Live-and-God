@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://l6g4bmt2wd4d"]
+
+[ext_resource type="PackedScene" uid="uid://bawbw71uj1phs" path="res://吸血鬼生存/场景/升级/ability_container.tscn" id="1_4kxrp"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/upgrade_screen.gd" id="1_dv0sh"]
+
+[node name="UpgradeScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_dv0sh")
+upgrade_card_scene = ExtResource("1_4kxrp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

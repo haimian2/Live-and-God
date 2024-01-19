@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://chufo3fugnjn1"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/hit_box_component.gd" id="1_fwi2v"]
+
+[node name="HitBoxComponent" type="Area2D"]
+position = Vector2(0, 1.25)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_fwi2v")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

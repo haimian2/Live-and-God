@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ulyowjobd7r"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/DropComponent.gd" id="1_dxxb7"]
+
+[node name="DropComponent" type="Node"]
+script = ExtResource("1_dxxb7")

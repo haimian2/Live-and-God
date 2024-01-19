@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtd81gqs6qc1n"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/管理器/game_events.gd" id="1_yjsor"]
+
+[node name="GameEvents" type="Node"]
+script = ExtResource("1_yjsor")

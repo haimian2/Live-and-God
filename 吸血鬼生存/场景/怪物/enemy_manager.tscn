@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yqomj2tm7oeq"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/EnemyManager.gd" id="1_g4doq"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/管理器/EnemyManager.gd" id="1_g4doq"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_g4doq")

@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1jhwcdhxxl8g"]
+[gd_scene load_steps=10 format=3 uid="uid://b1jhwcdhxxl8g"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/sword.gd" id="1_7o3ci"]
-[ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="1_fhkfq"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/sword.gd" id="1_bj2fh"]
+[ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="2_4e1vl"]
+[ext_resource type="PackedScene" uid="uid://chufo3fugnjn1" path="res://吸血鬼生存/场景/交互/hit_box_component.tscn" id="3_m5te8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oskdp"]
-atlas = ExtResource("1_fhkfq")
+atlas = ExtResource("2_4e1vl")
 region = Rect2(132, 128, 8, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7ep"]
-size = Vector2(9, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onfnt"]
+size = Vector2(8, 11)
 
 [sub_resource type="Animation" id="Animation_teuck"]
 length = 0.001
@@ -54,6 +55,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 0.349066, 0.698132, 1.0472, 1.39626, 1.74533, 2.0944, 2.44346, 2.79253, 3.14159, 3.49066, 3.83972, 4.18879, 4.53786, 4.88692, 5.23599, 5.58505, 5.93412, 6.28319]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_vcuyj"]
 resource_name = "闪现攻击"
@@ -92,7 +105,7 @@ _data = {
 }
 
 [node name="Sword" type="Node2D"]
-script = ExtResource("1_7o3ci")
+script = ExtResource("1_bj2fh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_oskdp")
@@ -100,18 +113,17 @@ centered = false
 offset = Vector2(-4, -13)
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
-collision_layer = 0
+[node name="HitBoxComponent" parent="Sprite2D" instance=ExtResource("3_m5te8")]
+collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(0.5, -5)
-shape = SubResource("RectangleShape2D_ix7ep")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitBoxComponent"]
+position = Vector2(0, -8.75)
+shape = SubResource("RectangleShape2D_onfnt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_iimfh")
 }
 
-[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
