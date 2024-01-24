@@ -395,6 +395,7 @@ shape = SubResource("RectangleShape2D_yk54q")
 
 [node name="Player" parent="." instance=ExtResource("8_8uxjk")]
 position = Vector2(2496, 1460)
+is_unmatched = false
 
 [connection signal="body_entered" from="Stele/PlotStele/Area2D" to="Stele/PlotStele" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Stele/PlotStele/Area2D" to="Stele/PlotStele" method="_on_area_2d_body_exited"]

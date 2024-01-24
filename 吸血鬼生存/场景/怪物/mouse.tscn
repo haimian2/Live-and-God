@@ -1,12 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://bldmn08p3vp3x"]
+[gd_scene load_steps=25 format=3 uid="uid://bldmn08p3vp3x"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/怪物/Mouse.gd" id="1_kuvdj"]
 [ext_resource type="PackedScene" uid="uid://d031qrgxn44i4" path="res://吸血鬼生存/场景/交互/health_component.tscn" id="2_owono"]
 [ext_resource type="PackedScene" uid="uid://c1ulyowjobd7r" path="res://吸血鬼生存/场景/交互/drop_component.tscn" id="3_7lcnk"]
+[ext_resource type="PackedScene" uid="uid://c0bdv3xhimqgh" path="res://吸血鬼生存/场景/交互/velocity_component.tscn" id="3_vishj"]
 [ext_resource type="PackedScene" uid="uid://celpddl3rhlpj" path="res://吸血鬼生存/场景/掉落/small_experience_vial.tscn" id="4_den5v"]
 [ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="5_x3qxb"]
+[ext_resource type="PackedScene" uid="uid://bcl28by7v5xgn" path="res://吸血鬼生存/场景/交互/hit_flash_component.tscn" id="6_hkib3"]
 [ext_resource type="PackedScene" uid="uid://bpixsg61b7mtj" path="res://吸血鬼生存/场景/交互/hurt_box_component.tscn" id="6_vhmc6"]
 [ext_resource type="PackedScene" uid="uid://chufo3fugnjn1" path="res://吸血鬼生存/场景/交互/hit_box_component.tscn" id="7_5hxa8"]
+[ext_resource type="Shader" path="res://吸血鬼生存/shader/hit_flash_component.gdshader" id="7_wnvki"]
+[ext_resource type="PackedScene" uid="uid://fybdb1m3iibb" path="res://吸血鬼生存/场景/怪物/pixel_dissipation_component.tscn" id="8_lpekv"]
+[ext_resource type="Shader" path="res://吸血鬼生存/shader/ pixel_dissipation.gdshader" id="9_8vffq"]
+[ext_resource type="PackedScene" uid="uid://bvjlksgsc2tb0" path="res://吸血鬼生存/场景/音频/音效.tscn" id="10_wioxj"]
+[ext_resource type="AudioStream" uid="uid://4hwmmd33u0po" path="res://吸血鬼生存/资源/音效/footstep_carpet_000.ogg" id="11_ma8eg"]
+[ext_resource type="AudioStream" uid="uid://e53tufl6wyej" path="res://吸血鬼生存/资源/音效/footstep_carpet_001.ogg" id="12_dd6c7"]
+[ext_resource type="AudioStream" uid="uid://ortkhrqmdx4i" path="res://吸血鬼生存/资源/音效/footstep_carpet_002.ogg" id="13_7ukdl"]
+[ext_resource type="AudioStream" uid="uid://cmbludy0t40su" path="res://吸血鬼生存/资源/音效/footstep_carpet_003.ogg" id="14_sxu50"]
+[ext_resource type="AudioStream" uid="uid://cks1bdvxmnbla" path="res://吸血鬼生存/资源/音效/footstep_carpet_004.ogg" id="15_jc5sc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk3hh"]
+resource_local_to_scene = true
+shader = ExtResource("7_wnvki")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1nv7m"]
+resource_local_to_scene = true
+shader = ExtResource("9_8vffq")
+shader_parameter/time = 1.57
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2atx6"]
 size = Vector2(14, 16)
@@ -23,18 +44,35 @@ radius = 12.0026
 
 [node name="Mouse" type="CharacterBody2D" groups=["monster"]]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_kuvdj")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_owono")]
+max_health = 20.0
+
+[node name="VelocityComponent" parent="." instance=ExtResource("3_vishj")]
 
 [node name="DropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_7lcnk")]
 drop_scene = ExtResource("4_den5v")
 health_component = NodePath("../HealthComponent")
 
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_hkib3")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_mk3hh")
+
+[node name="PixelDissipationComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_lpekv")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Sprite2D")
+pixel_dissipation_material = SubResource("ShaderMaterial_1nv7m")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2atx6")
+
+[node name="HitStreamComponent" parent="." instance=ExtResource("10_wioxj")]
+bus = &"音效"
+streams = Array[AudioStream]([ExtResource("11_ma8eg"), ExtResource("12_dd6c7"), ExtResource("13_7ukdl"), ExtResource("14_sxu50"), ExtResource("15_jc5sc")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_qxerh")
@@ -50,6 +88,7 @@ shape = SubResource("CircleShape2D_q54rt")
 
 [node name="HitBoxComponent" parent="." instance=ExtResource("7_5hxa8")]
 position = Vector2(0, 1)
+collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dpr5gubh1eyxf"]
+
+[ext_resource type="Texture2D" uid="uid://3pij4jjayxo5" path="res://吸血鬼生存/资源/panel-004.png" id="1_x7nco"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itwcw"]
+texture = ExtResource("1_x7nco")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_itwcw")

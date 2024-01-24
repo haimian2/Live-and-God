@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpy6f53wfllwg"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/管理器/input_manager.gd" id="1_hodir"]
+
+[node name="InputManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_hodir")

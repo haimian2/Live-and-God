@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0axh52fhpjdc"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/float_text.gd" id="1_ffoat"]
+
+[node name="FloatText" type="Node2D"]
+script = ExtResource("1_ffoat")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 24.0
+offset_bottom = 16.0
+theme_override_colors/font_outline_color = Color(0.431373, 0.0470588, 0.0588235, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "123"

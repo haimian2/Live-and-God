@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://chsoiroayg02s"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/villain_avatar.gd" id="1_1xxu6"]
+
+[node name="VillainAvatar" type="PanelContainer"]
+custom_minimum_size = Vector2(175, 175)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1xxu6")
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(82.5, 82.5)
+scale = Vector2(10, 10)
+centered = false

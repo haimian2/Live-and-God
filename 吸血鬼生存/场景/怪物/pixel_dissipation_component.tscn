@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://fybdb1m3iibb"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/怪物/pixel_dissipation_component.gd" id="1_y3rpb"]
+[ext_resource type="Material" uid="uid://k336dx2ajuc" path="res://吸血鬼生存/场景/材质/pixel_dissipation.tres" id="2_swpoq"]
+
+[node name="PixelDissipationComponent" type="Node"]
+script = ExtResource("1_y3rpb")
+pixel_dissipation_material = ExtResource("2_swpoq")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8tykx7exltue"]
+
+[ext_resource type="PackedScene" uid="uid://uglp22q2ghgl" path="res://吸血鬼生存/场景/UI/game_over_ui.tscn" id="1_85wd3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GameOverUI" parent="." instance=ExtResource("1_85wd3")]

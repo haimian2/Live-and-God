@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpixsg61b7mtj"]
+[gd_scene load_steps=3 format=3 uid="uid://bpixsg61b7mtj"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/hurt_box_component.gd" id="1_fohav"]
+[ext_resource type="PackedScene" uid="uid://d0axh52fhpjdc" path="res://吸血鬼生存/场景/交互/float_text.tscn" id="2_yfur4"]
 
 [node name="HurtBoxComponent" type="Area2D"]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_fohav")
+float_text = ExtResource("2_yfur4")
+
+[node name="DelayDamageTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true

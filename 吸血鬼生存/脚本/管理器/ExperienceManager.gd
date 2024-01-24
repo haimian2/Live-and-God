@@ -7,7 +7,7 @@ const TARGET_EXPERIENCE_GROWTH = 5
 
 var current_experience:int = 0
 var current_level:int = 0
-var target_experience:int = 1
+var target_experience:int = 10
 
 func _ready() -> void:
 	GameEvents.experience_collected.connect(process_experience_collected)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvjlksgsc2tb0"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/音频/音效.gd" id="1_wbdo4"]
+
+[node name="RandomStreamPlayer2DComponent" type="AudioStreamPlayer2D"]
+max_distance = 300.0
+script = ExtResource("1_wbdo4")

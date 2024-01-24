@@ -1,26 +1,243 @@
-[gd_scene load_steps=2 format=3 uid="uid://bawbw71uj1phs"]
+[gd_scene load_steps=29 format=3 uid="uid://bawbw71uj1phs"]
 
+[ext_resource type="Theme" uid="uid://dpr5gubh1eyxf" path="res://吸血鬼生存/场景/主题/ability_container.tres" id="1_8ejl4"]
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_container.gd" id="1_w5ocp"]
+[ext_resource type="PackedScene" uid="uid://bwus14ghtvijj" path="res://吸血鬼生存/场景/音频/音乐.tscn" id="3_4wmln"]
+[ext_resource type="AudioStream" uid="uid://bhkr2irum7raa" path="res://吸血鬼生存/资源/音效/toggle_001.ogg" id="4_aunia"]
+[ext_resource type="AudioStream" uid="uid://datsfb58ds4f8" path="res://吸血鬼生存/资源/音效/click_001.ogg" id="4_src3h"]
+[ext_resource type="AudioStream" uid="uid://ipsv6fepcsfc" path="res://吸血鬼生存/资源/音效/toggle_002.ogg" id="5_hvr7w"]
+[ext_resource type="AudioStream" uid="uid://55uu88jf876c" path="res://吸血鬼生存/资源/音效/click_002.ogg" id="5_vxh1d"]
+[ext_resource type="AudioStream" uid="uid://dg2tlhoudr201" path="res://吸血鬼生存/资源/音效/click_003.ogg" id="6_kipga"]
+[ext_resource type="AudioStream" uid="uid://b1cbbbp0m66ne" path="res://吸血鬼生存/资源/音效/toggle_003.ogg" id="6_oyi2q"]
+[ext_resource type="AudioStream" uid="uid://b0al8iyi4qxnv" path="res://吸血鬼生存/资源/音效/toggle_004.ogg" id="7_3qkjr"]
+[ext_resource type="AudioStream" uid="uid://douskjsknk6o7" path="res://吸血鬼生存/资源/音效/click_004.ogg" id="7_w71ku"]
+[ext_resource type="AudioStream" uid="uid://cab3owf1iqlfp" path="res://吸血鬼生存/资源/音效/click_005.ogg" id="8_bgopq"]
+[ext_resource type="AudioStream" uid="uid://btd7b2b62a0hr" path="res://吸血鬼生存/资源/音效/select_001.ogg" id="13_wv63g"]
+[ext_resource type="AudioStream" uid="uid://dtsopswwd2top" path="res://吸血鬼生存/资源/音效/select_002.ogg" id="14_fg3se"]
+[ext_resource type="AudioStream" uid="uid://dggchaysoqww3" path="res://吸血鬼生存/资源/音效/select_003.ogg" id="15_y2ulv"]
+[ext_resource type="AudioStream" uid="uid://bsateih7v0cjs" path="res://吸血鬼生存/资源/音效/select_004.ogg" id="16_nt6ed"]
+[ext_resource type="AudioStream" uid="uid://bte3gn60pnjfy" path="res://吸血鬼生存/资源/音效/select_005.ogg" id="17_qypi4"]
+[ext_resource type="AudioStream" uid="uid://bnpcs71ffcu6f" path="res://吸血鬼生存/资源/音效/select_006.ogg" id="18_nres5"]
+[ext_resource type="AudioStream" uid="uid://bhu5pmq7xtqd2" path="res://吸血鬼生存/资源/音效/select_007.ogg" id="19_wekhv"]
+[ext_resource type="AudioStream" uid="uid://cl4o8b7dkmw7s" path="res://吸血鬼生存/资源/音效/select_008.ogg" id="20_ccsln"]
 
-[node name="AbilityContainer" type="PanelContainer"]
+[sub_resource type="Animation" id="Animation_p64eg"]
+resource_name = "淡入"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_83hnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qpoxl"]
+resource_name = "选择"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1.4), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SelectAudio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jeo8d"]
+resource_name = "丢弃"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6fm3"]
+_data = {
+"RESET": SubResource("Animation_83hnw"),
+"丢弃": SubResource("Animation_jeo8d"),
+"淡入": SubResource("Animation_p64eg"),
+"选择": SubResource("Animation_qpoxl")
+}
+
+[sub_resource type="Animation" id="Animation_m31or"]
+resource_name = "鼠标悬停"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_po0ya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wex85"]
+_data = {
+"RESET": SubResource("Animation_po0ya"),
+"鼠标悬停": SubResource("Animation_m31or")
+}
+
+[node name="AbilityContainer" type="PanelContainer" groups=["upgrade_card"]]
 custom_minimum_size = Vector2(300, 400)
+offset_right = 300.0
+offset_bottom = 436.0
+pivot_offset = Vector2(150, 218)
+theme = ExtResource("1_8ejl4")
 script = ExtResource("1_w5ocp")
+
+[node name="HoverAudio" parent="." instance=ExtResource("3_4wmln")]
+streams = Array[AudioStream]([ExtResource("4_aunia"), ExtResource("5_hvr7w"), ExtResource("6_oyi2q"), ExtResource("7_3qkjr")])
+
+[node name="SelectAudio" parent="." instance=ExtResource("3_4wmln")]
+streams = Array[AudioStream]([ExtResource("4_src3h"), ExtResource("5_vxh1d"), ExtResource("6_kipga"), ExtResource("7_w71ku"), ExtResource("8_bgopq"), ExtResource("13_wv63g"), ExtResource("14_fg3se"), ExtResource("15_y2ulv"), ExtResource("16_nt6ed"), ExtResource("17_qypi4"), ExtResource("18_nres5"), ExtResource("19_wekhv"), ExtResource("20_ccsln")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w6fm3")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wex85")
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 100)
+custom_minimum_size = Vector2(120, 150)
 layout_mode = 2
-text = "this is a name"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "aaaaa"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
-text = "ha ha ha ha ha ha ha "
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "aaaaa"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

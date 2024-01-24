@@ -1,10 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cihyy4gxrlmcf"]
+[gd_scene load_steps=3 format=3 uid="uid://cihyy4gxrlmcf"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/upgrade_manager.gd" id="1_tquuk"]
-[ext_resource type="Resource" uid="uid://kvxcg2dl1144" path="res://吸血鬼生存/场景/升级/SwordRate.tres" id="2_t7uvy"]
 [ext_resource type="PackedScene" uid="uid://l6g4bmt2wd4d" path="res://吸血鬼生存/场景/升级/upgrade_screen.tscn" id="3_ffobo"]
 
 [node name="UpgradeManager" type="Node"]
 script = ExtResource("1_tquuk")
-upgrade_arr = Array[Resource("res://吸血鬼生存/脚本/升级/update_ability.gd")]([ExtResource("2_t7uvy")])
 upgrade_screen_scene = ExtResource("3_ffobo")

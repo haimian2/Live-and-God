@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://curlrgwb4b34n"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_upgrade.gd" id="1_3wux3"]
+
+[resource]
+script = ExtResource("1_3wux3")
+id = "axe_damage"
+max_quantity = 0
+name = "更利的旋转斧"
+description = "旋转斧的伤害提高10%"

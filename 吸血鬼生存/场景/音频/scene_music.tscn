@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://fcugy1aigg41"]
+
+[ext_resource type="AudioStream" uid="uid://mah0bh717fpq" path="res://吸血鬼生存/资源/音效/Eye of Forgiveness.mp3" id="1_yapvn"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/音频/scene_music.gd" id="2_iy3xp"]
+
+[node name="SceneMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_yapvn")
+volume_db = -15.0
+bus = &"音乐"
+script = ExtResource("2_iy3xp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true

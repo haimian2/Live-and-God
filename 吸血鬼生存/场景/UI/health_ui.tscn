@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cupkp2j20cow0"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/HealthUI.gd" id="1_qdao2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnpye"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aga47"]
+bg_color = Color(0.247059, 0.631373, 0.192157, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[node name="HealthUI" type="ProgressBar"]
+offset_right = 21.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nnpye")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aga47")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_qdao2")

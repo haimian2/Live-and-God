@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://cdnyi8dhwj40f"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability.gd" id="1_gbtof"]
+[ext_resource type="PackedScene" uid="uid://rkxavlbxtj7q" path="res://吸血鬼生存/场景/玩家/rotating_axe.tscn" id="1_j74tv"]
+
+[resource]
+script = ExtResource("1_gbtof")
+ability_scene = ExtResource("1_j74tv")
+id = "axe"
+max_quantity = 1
+name = "旋转斧"
+description = "获得一个冷却时间为4秒的螺旋式旋转斧"

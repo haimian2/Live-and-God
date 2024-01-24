@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://djlfn82mu0w60"]
+
+[ext_resource type="Shader" path="res://吸血鬼生存/shader/hit_flash_component.gdshader" id="1_ca38h"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ca38h")
+shader_parameter/lerp_percent = 0.0

@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1gcog56286dm"]
+[gd_scene load_steps=3 format=3 uid="uid://c1gcog56286dm"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/FlashSword.gd" id="1_6sh24"]
+[ext_resource type="PackedScene" uid="uid://b1jhwcdhxxl8g" path="res://吸血鬼生存/场景/玩家/sword.tscn" id="2_238ld"]
 
 [node name="FlashSword" type="Node"]
 script = ExtResource("1_6sh24")
+SWORD = ExtResource("2_238ld")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3ovxv8q78vwl"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/加载和存储/meta_progression.gd" id="1_5fe4d"]
+
+[node name="MetaProgression" type="Node"]
+script = ExtResource("1_5fe4d")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bm1nhxei24ml2"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_upgrade.gd" id="1_2vfn1"]
+
+[resource]
+script = ExtResource("1_2vfn1")
+id = "player_speed"
+max_quantity = 10
+name = "移速提高"
+description = "玩家的移动速度提高10%"

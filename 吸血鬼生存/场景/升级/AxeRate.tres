@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://uxyk64d80wqv"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_upgrade.gd" id="1_av5pl"]
+
+[resource]
+script = ExtResource("1_av5pl")
+id = "axe_rate"
+max_quantity = 5
+name = "更快的旋转斧"
+description = "旋转斧的冷却提高10%"

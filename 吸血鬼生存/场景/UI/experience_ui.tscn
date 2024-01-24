@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b374p06gxyyk7"]
+[gd_scene load_steps=4 format=3 uid="uid://b374p06gxyyk7"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/ExperienceUI.gd" id="1_2880c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b7bd"]
+bg_color = Color(0.278431, 0.329412, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d03p3"]
+bg_color = Color(0.458824, 0.678431, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.278431, 0.329412, 0.235294, 1)
 
 [node name="ExperienceUI" type="CanvasLayer"]
 script = ExtResource("1_2880c")
@@ -15,6 +26,8 @@ grow_horizontal = 2
 self_modulate = Color(0.117647, 0.658824, 0.356863, 1)
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_6b7bd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d03p3")
 value = 10.0
 show_percentage = false
 

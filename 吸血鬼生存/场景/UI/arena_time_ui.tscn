@@ -6,20 +6,16 @@
 script = ExtResource("1_vm5dp")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 60.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.160784, 0.0117647, 0.0705882, 1)
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 40
-
-[node name="Timer" type="Timer" parent="MarginContainer/Label"]
-wait_time = 60.0
-autostart = true
-
-[connection signal="timeout" from="MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]
+text = "aaa"

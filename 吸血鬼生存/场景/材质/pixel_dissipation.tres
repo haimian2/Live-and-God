@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://k336dx2ajuc"]
+
+[ext_resource type="Shader" path="res://吸血鬼生存/shader/ pixel_dissipation.gdshader" id="1_hgx33"]
+
+[resource]
+shader = ExtResource("1_hgx33")
+shader_parameter/time = 1.57

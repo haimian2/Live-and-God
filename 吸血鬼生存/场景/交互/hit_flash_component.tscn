@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcl28by7v5xgn"]
+
+[ext_resource type="Material" uid="uid://djlfn82mu0w60" path="res://吸血鬼生存/场景/材质/hit_flash_material.tres" id="1_no51i"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/hit_flash_component.gd" id="2_h8pyd"]
+
+[node name="HitFlashComponent" type="Node"]
+script = ExtResource("2_h8pyd")
+hit_flash_material = ExtResource("1_no51i")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://rkxavlbxtj7q"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/rotating_axe.gd" id="1_uad0e"]
+[ext_resource type="PackedScene" uid="uid://d3bw1k1fjpswq" path="res://吸血鬼生存/场景/玩家/axe.tscn" id="2_m1mdq"]
+
+[node name="RotatingAxe" type="Node"]
+script = ExtResource("1_uad0e")
+AXE = ExtResource("2_m1mdq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

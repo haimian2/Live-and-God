@@ -1,9 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://kvxcg2dl1144"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://kvxcg2dl1144"]
 
-[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/update_ability.gd" id="1_1vhdq"]
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_upgrade.gd" id="1_jt6y5"]
 
 [resource]
-script = ExtResource("1_1vhdq")
+script = ExtResource("1_jt6y5")
 id = "sword_rate"
+max_quantity = 5
 name = "更快的斩击"
 description = "斩击剑的冷却提高10%"

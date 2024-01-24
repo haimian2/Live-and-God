@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cwt8vj4t5tw1h"]
+
+[ext_resource type="FontFile" uid="uid://btc1addieie5i" path="res://吸血鬼生存/资源/Kenney Blocks.ttf" id="1_ftcwt"]
+
+[resource]
+default_font = ExtResource("1_ftcwt")
+default_font_size = 16

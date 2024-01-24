@@ -1,0 +1,19 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8smgvstn3vpy"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/sound_button.gd" id="1_d3ti6"]
+[ext_resource type="PackedScene" uid="uid://bwus14ghtvijj" path="res://吸血鬼生存/场景/音频/音乐.tscn" id="1_gq3ji"]
+[ext_resource type="AudioStream" uid="uid://datsfb58ds4f8" path="res://吸血鬼生存/资源/音效/click_001.ogg" id="3_5kvwa"]
+[ext_resource type="AudioStream" uid="uid://55uu88jf876c" path="res://吸血鬼生存/资源/音效/click_002.ogg" id="4_16a2k"]
+[ext_resource type="AudioStream" uid="uid://dg2tlhoudr201" path="res://吸血鬼生存/资源/音效/click_003.ogg" id="5_5u78j"]
+[ext_resource type="AudioStream" uid="uid://douskjsknk6o7" path="res://吸血鬼生存/资源/音效/click_004.ogg" id="6_tev3w"]
+[ext_resource type="AudioStream" uid="uid://cab3owf1iqlfp" path="res://吸血鬼生存/资源/音效/click_005.ogg" id="7_lle62"]
+
+[node name="SoundButton" type="Button"]
+process_mode = 3
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_d3ti6")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("1_gq3ji")]
+bus = &"音效"
+streams = Array[AudioStream]([ExtResource("3_5kvwa"), ExtResource("4_16a2k"), ExtResource("5_5u78j"), ExtResource("6_tev3w"), ExtResource("7_lle62")])

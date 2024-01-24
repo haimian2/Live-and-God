@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwus14ghtvijj"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/音频/音乐.gd" id="1_0mar3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+bus = &"音乐"
+script = ExtResource("1_0mar3")

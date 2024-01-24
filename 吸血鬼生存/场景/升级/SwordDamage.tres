@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://biubilnxvynln"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability_upgrade.gd" id="1_u54s6"]
+
+[resource]
+script = ExtResource("1_u54s6")
+id = "sword_damage"
+max_quantity = 0
+name = "更利的斩击"
+description = "斩击剑的伤害提高10%"

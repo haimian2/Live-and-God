@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://blmn3p1prw57l"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/back_button.gd" id="1_ujiky"]
+
+[node name="BackButton" type="Button"]
+custom_minimum_size = Vector2(100, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "返回"
+script = ExtResource("1_ujiky")

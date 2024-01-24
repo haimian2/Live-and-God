@@ -1,12 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjkwik3sqqsjd"]
+[gd_scene load_steps=24 format=3 uid="uid://cjkwik3sqqsjd"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/Player.gd" id="1_xljx7"]
+[ext_resource type="PackedScene" uid="uid://bvjlksgsc2tb0" path="res://吸血鬼生存/场景/音频/音效.tscn" id="2_8h3xi"]
 [ext_resource type="PackedScene" uid="uid://d031qrgxn44i4" path="res://吸血鬼生存/场景/交互/health_component.tscn" id="2_u3gpn"]
 [ext_resource type="Texture2D" uid="uid://dxgmfaf3xsdf2" path="res://吸血鬼生存/资源/tile_0085.png" id="2_uqhq6"]
+[ext_resource type="AudioStream" uid="uid://bj40celepvlk0" path="res://吸血鬼生存/资源/音效/impactSoft_heavy_000.ogg" id="3_63ck8"]
 [ext_resource type="PackedScene" uid="uid://c1gcog56286dm" path="res://吸血鬼生存/场景/玩家/flash_sword.tscn" id="3_go0td"]
+[ext_resource type="PackedScene" uid="uid://c0bdv3xhimqgh" path="res://吸血鬼生存/场景/交互/velocity_component.tscn" id="3_nhenm"]
+[ext_resource type="AudioStream" uid="uid://crj6bfljitklp" path="res://吸血鬼生存/资源/音效/impactSoft_heavy_001.ogg" id="4_r1x76"]
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/Camera2D.gd" id="5_0penh"]
+[ext_resource type="AudioStream" uid="uid://lvuert7yumla" path="res://吸血鬼生存/资源/音效/impactSoft_heavy_002.ogg" id="5_07q3u"]
 [ext_resource type="PackedScene" uid="uid://c52jcd8k2agy1" path="res://吸血鬼生存/场景/交互/pick_box_component.tscn" id="5_m6b6o"]
+[ext_resource type="AudioStream" uid="uid://qhsu7grs14tu" path="res://吸血鬼生存/资源/音效/impactSoft_heavy_003.ogg" id="6_t2uok"]
+[ext_resource type="AudioStream" uid="uid://cy184fojj4p7o" path="res://吸血鬼生存/资源/音效/impactSoft_heavy_004.ogg" id="7_ijjch"]
 [ext_resource type="PackedScene" uid="uid://bpixsg61b7mtj" path="res://吸血鬼生存/场景/交互/hurt_box_component.tscn" id="7_p8sfy"]
+[ext_resource type="PackedScene" uid="uid://cupkp2j20cow0" path="res://吸血鬼生存/场景/UI/health_ui.tscn" id="8_2kwf3"]
+[ext_resource type="AudioStream" uid="uid://cw16la2u5ydcp" path="res://吸血鬼生存/资源/音效/impactSoft_medium_000.ogg" id="8_664rw"]
+[ext_resource type="AudioStream" uid="uid://ybii8bodg043" path="res://吸血鬼生存/资源/音效/impactSoft_medium_001.ogg" id="9_wk1ur"]
+[ext_resource type="AudioStream" uid="uid://dx2ag11nyt6pv" path="res://吸血鬼生存/资源/音效/impactSoft_medium_002.ogg" id="10_e0yi8"]
+[ext_resource type="AudioStream" uid="uid://4aife0xifdsb" path="res://吸血鬼生存/资源/音效/impactSoft_medium_003.ogg" id="11_3xids"]
+[ext_resource type="AudioStream" uid="uid://c58uwi4up8j1e" path="res://吸血鬼生存/资源/音效/impactSoft_medium_004.ogg" id="12_3h67u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihyfj"]
 size = Vector2(16, 15.5)
@@ -15,20 +28,36 @@ size = Vector2(16, 15.5)
 radius = 55.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqrmw"]
-radius = 11.0
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 self_modulate = Color(0.537255, 1, 0.117647, 1)
 collision_layer = 2
-collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_xljx7")
 
+[node name="RandomStreamPlayer2DComponent" parent="." instance=ExtResource("2_8h3xi")]
+streams = Array[AudioStream]([ExtResource("3_63ck8"), ExtResource("4_r1x76"), ExtResource("5_07q3u"), ExtResource("6_t2uok"), ExtResource("7_ijjch"), ExtResource("8_664rw"), ExtResource("9_wk1ur"), ExtResource("10_e0yi8"), ExtResource("11_3xids"), ExtResource("12_3h67u")])
+
 [node name="HealthComponent" parent="." instance=ExtResource("2_u3gpn")]
+unique_name_in_owner = true
+max_health = 100.0
 
-[node name="SwordAbilityManager" type="Node" parent="."]
+[node name="VelocityComponent" parent="." instance=ExtResource("3_nhenm")]
+unique_name_in_owner = true
+acceleration = 25.0
 
-[node name="FlashSword" parent="SwordAbilityManager" instance=ExtResource("3_go0td")]
+[node name="Abilities" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="FlashSword" parent="Abilities" instance=ExtResource("3_go0td")]
+
+[node name="HealthUI" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_2kwf3")]
+offset_left = -12.0
+offset_top = 9.0
+offset_right = 12.0
+offset_bottom = 13.0
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -49,6 +78,8 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_oiq8a")
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_p8sfy")]
+collision_layer = 2
+collision_mask = 4
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
