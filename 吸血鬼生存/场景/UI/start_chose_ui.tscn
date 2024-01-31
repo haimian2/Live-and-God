@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://wfn7xyfl24ih"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/UI/start_chose_ui.gd" id="1_842lc"]
+[ext_resource type="PackedScene" uid="uid://dvbrrc2jp8cft" path="res://吸血鬼生存/场景/UI/character_choose.tscn" id="1_lovek"]
+[ext_resource type="PackedScene" uid="uid://bbftmihb60jvw" path="res://吸血鬼生存/场景/UI/weapons_choose.tscn" id="3_kwi8y"]
+
+[node name="StartChoseUI" type="CanvasLayer"]
+script = ExtResource("1_842lc")
+
+[node name="CharacterChoose" parent="." instance=ExtResource("1_lovek")]
+
+[node name="WeaponsChoose" parent="." instance=ExtResource("3_kwi8y")]
+visible = false

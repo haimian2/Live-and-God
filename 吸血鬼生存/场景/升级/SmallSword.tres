@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://drsl0dcxf52al"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/ability.gd" id="1_8728o"]
+
+[resource]
+script = ExtResource("1_8728o")
+id = ""
+max_quantity = 0
+name = ""
+description = ""

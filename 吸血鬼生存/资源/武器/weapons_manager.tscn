@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://nb2r0x6m7m31"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/资源/武器/weapons_manager.gd" id="1_vxnfp"]
+[ext_resource type="PackedScene" uid="uid://c3cc88jyvjajc" path="res://吸血鬼生存/资源/武器/big_sword.tscn" id="2_rxfo0"]
+
+[node name="WeaponsManager" type="Node2D"]
+script = ExtResource("1_vxnfp")
+weapons_scene = ExtResource("2_rxfo0")

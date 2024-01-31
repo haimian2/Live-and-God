@@ -4,7 +4,7 @@ extends Node
 @onready var timer: Timer = $Timer
 
 var base_wait_time:float = 4
-var flash_sword_damage_percent:float
+var rotating_axe_damage_percent:float
 
 func _ready() -> void:
 	timer.wait_time = base_wait_time
@@ -23,4 +23,4 @@ func on_ability_upgrade_added(upgrade:AbilityUpgrade,current_upgrades:Dictionary
 		timer.wait_time = base_wait_time * (1 - percent_reduction)
 		timer.start()
 	elif upgrade.id == "axe_damage":
-		flash_sword_damage_percent = current_upgrades["axe_damage"]["quantity"] * .1
+		rotating_axe_damage_percent = current_upgrades["axe_damage"]["quantity"] * .1

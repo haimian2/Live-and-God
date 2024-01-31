@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgpxu3uj6x6dx"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/怪物/range_enemy_manager.gd" id="1_0p2tw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htrtp"]
+radius = 50.0
+
+[node name="RangeEnemyManager" type="Node2D"]
+script = ExtResource("1_0p2tw")
+
+[node name="CheckEnemy" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckEnemy"]
+shape = SubResource("CircleShape2D_htrtp")
+
+[connection signal="body_entered" from="CheckEnemy" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CheckEnemy" to="." method="_on_area_2d_body_exited"]

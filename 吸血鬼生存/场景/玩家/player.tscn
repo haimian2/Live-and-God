@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cjkwik3sqqsjd"]
+[gd_scene load_steps=28 format=3 uid="uid://cjkwik3sqqsjd"]
 
 [ext_resource type="Script" path="res://吸血鬼生存/脚本/玩家/Player.gd" id="1_xljx7"]
 [ext_resource type="PackedScene" uid="uid://bvjlksgsc2tb0" path="res://吸血鬼生存/场景/音频/音效.tscn" id="2_8h3xi"]
@@ -20,9 +20,97 @@
 [ext_resource type="AudioStream" uid="uid://dx2ag11nyt6pv" path="res://吸血鬼生存/资源/音效/impactSoft_medium_002.ogg" id="10_e0yi8"]
 [ext_resource type="AudioStream" uid="uid://4aife0xifdsb" path="res://吸血鬼生存/资源/音效/impactSoft_medium_003.ogg" id="11_3xids"]
 [ext_resource type="AudioStream" uid="uid://c58uwi4up8j1e" path="res://吸血鬼生存/资源/音效/impactSoft_medium_004.ogg" id="12_3h67u"]
+[ext_resource type="PackedScene" uid="uid://bgpxu3uj6x6dx" path="res://吸血鬼生存/场景/怪物/range_enemy_manager.tscn" id="15_hrne7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihyfj"]
-size = Vector2(16, 15.5)
+[sub_resource type="Animation" id="Animation_2kio2"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_su8mw"]
+resource_name = "走动"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.812252, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.261799, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 8), Vector2(0, 4), Vector2(0, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hp3g7"]
+_data = {
+"RESET": SubResource("Animation_2kio2"),
+"走动": SubResource("Animation_su8mw")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_waxcb"]
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oiq8a"]
 radius = 55.0
@@ -36,6 +124,11 @@ collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_xljx7")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hp3g7")
+}
+
 [node name="RandomStreamPlayer2DComponent" parent="." instance=ExtResource("2_8h3xi")]
 streams = Array[AudioStream]([ExtResource("3_63ck8"), ExtResource("4_r1x76"), ExtResource("5_07q3u"), ExtResource("6_t2uok"), ExtResource("7_ijjch"), ExtResource("8_664rw"), ExtResource("9_wk1ur"), ExtResource("10_e0yi8"), ExtResource("11_3xids"), ExtResource("12_3h67u")])
 
@@ -47,10 +140,17 @@ max_health = 100.0
 unique_name_in_owner = true
 acceleration = 25.0
 
+[node name="RangeEnemyManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_hrne7")]
+player = NodePath("..")
+
+[node name="AbilityObjects" type="Node2D" parent="."]
+unique_name_in_owner = true
+
 [node name="Abilities" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="FlashSword" parent="Abilities" instance=ExtResource("3_go0td")]
+[node name="FlashSword" parent="Abilities" node_paths=PackedStringArray("range_enemy_manager") instance=ExtResource("3_go0td")]
+range_enemy_manager = NodePath("../../RangeEnemyManager")
 
 [node name="HealthUI" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_2kwf3")]
 offset_left = -12.0
@@ -60,17 +160,21 @@ offset_bottom = 13.0
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_ihyfj")
+shape = SubResource("CircleShape2D_waxcb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
 texture = ExtResource("2_uqhq6")
+offset = Vector2(0, -8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("5_0penh")
 
 [node name="PickBoxComponent" parent="." instance=ExtResource("5_m6b6o")]
+visible = false
 collision_layer = 8
 collision_mask = 16
 
@@ -78,6 +182,7 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_oiq8a")
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_p8sfy")]
+visible = false
 collision_layer = 2
 collision_mask = 4
 health_component = NodePath("../HealthComponent")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://clhv3dbg7131t"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/升级/fire_small_sword.gd" id="1_01hlw"]
+
+[node name="FireSmallSword" type="Node"]
+script = ExtResource("1_01hlw")
+
+[node name="Timer" type="Timer" parent="."]

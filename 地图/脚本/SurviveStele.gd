@@ -14,4 +14,4 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		body.process_E_KEY(null,false)
 		
 func process_interact(player:Object)->void:
-	SceneChanger.change_scene("res://吸血鬼生存/场景/vampire_survival_world.tscn",true)
+	SceneChanger.change_scene("res://吸血鬼生存/场景/UI/start_chose_ui.tscn",true)

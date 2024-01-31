@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name Player
 
 @export var base_health:int = 100
 @export var base_energy:int = 100

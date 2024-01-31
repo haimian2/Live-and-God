@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var tile_map: TileMap = $TileMap
 @onready var camera_2d: Camera2D = $"Player/Camera2D"
-@onready var player: Player = $Player
+@onready var player: CharacterBody2D = $Player
 @onready var shop: StaticBody2D = $Shop
 
 func _ready() -> void:

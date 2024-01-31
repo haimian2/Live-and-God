@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bncn3ni8k6bs1"]
+
+[ext_resource type="Script" path="res://吸血鬼生存/脚本/交互/check_enemy.gd" id="1_mk61e"]
+
+[node name="CheckEnemy" type="Area2D"]
+script = ExtResource("1_mk61e")

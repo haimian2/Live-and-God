@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2qwpa26tyski"]
+[gd_scene load_steps=4 format=3 uid="uid://b2qwpa26tyski"]
 
 [ext_resource type="Script" path="res://测试/脚本/test_2.gd" id="1_uymxb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j14mn"]
+radius = 90.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1x43"]
 
 [node name="test2" type="Button"]
 anchors_preset = 15
@@ -14,5 +19,17 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "aaaaaaaa"
 script = ExtResource("1_uymxb")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-217, -101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j14mn")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-130, -59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_p1x43")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

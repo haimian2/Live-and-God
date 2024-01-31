@@ -7,8 +7,10 @@ signal player_attack(damage:int)
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hit_stream_component: AudioStreamPlayer2D = $HitStreamComponent
 @onready var pixel_dissipation_component: Node = $PixelDissipationComponent
+var e_id:String
 
 func _ready() -> void:
+	e_id = UUID.get_uuid()
 	health_component.died.connect(on_died)
 	health_component.reduce_health.connect(on_reduce_health)
 	pixel_dissipation_component.can_queue_free.connect(on_can_queue_free)
@@ -34,4 +36,4 @@ func on_reduce_health():
 	hit_stream_component.play_random()
 	
 func on_can_queue_free():
-	queue_free()
+	call_deferred("queue_free")

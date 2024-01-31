@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cku0wsroyjhii"]
+
+[ext_resource type="Script" path="res://全局/脚本/global_data.gd" id="1_ad7gg"]
+
+[node name="GlobalData" type="Node"]
+script = ExtResource("1_ad7gg")

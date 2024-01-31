@@ -24,13 +24,13 @@ resource_local_to_scene = true
 shader = ExtResource("7_wnvki")
 shader_parameter/lerp_percent = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1nv7m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5com0"]
 resource_local_to_scene = true
 shader = ExtResource("9_8vffq")
 shader_parameter/time = 1.57
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2atx6"]
-size = Vector2(14, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mvw7g"]
+radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxerh"]
 atlas = ExtResource("5_x3qxb")
@@ -65,10 +65,10 @@ hit_flash_material = SubResource("ShaderMaterial_mk3hh")
 [node name="PixelDissipationComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_lpekv")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Sprite2D")
-pixel_dissipation_material = SubResource("ShaderMaterial_1nv7m")
+pixel_dissipation_material = SubResource("ShaderMaterial_5com0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2atx6")
+shape = SubResource("CircleShape2D_mvw7g")
 
 [node name="HitStreamComponent" parent="." instance=ExtResource("10_wioxj")]
 bus = &"音效"

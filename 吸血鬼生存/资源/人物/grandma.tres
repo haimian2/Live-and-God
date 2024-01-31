@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dqj4otlr1pfmd"]
+
+[ext_resource type="Texture2D" uid="uid://dmipujsuo5iv2" path="res://吸血鬼生存/资源/tilemap_packed.png" id="1_dn4a1"]
+
+[resource]
+atlas = ExtResource("1_dn4a1")
+region = Rect2(64, 129, 16, 15)
