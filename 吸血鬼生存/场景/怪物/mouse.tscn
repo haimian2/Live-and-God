@@ -24,7 +24,7 @@ resource_local_to_scene = true
 shader = ExtResource("7_wnvki")
 shader_parameter/lerp_percent = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5com0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2k3sp"]
 resource_local_to_scene = true
 shader = ExtResource("9_8vffq")
 shader_parameter/time = 1.57
@@ -65,7 +65,7 @@ hit_flash_material = SubResource("ShaderMaterial_mk3hh")
 [node name="PixelDissipationComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_lpekv")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Sprite2D")
-pixel_dissipation_material = SubResource("ShaderMaterial_5com0")
+pixel_dissipation_material = SubResource("ShaderMaterial_2k3sp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mvw7g")
